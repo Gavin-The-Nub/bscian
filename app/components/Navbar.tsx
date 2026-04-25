@@ -16,6 +16,10 @@ const navLinks = [
       { label: "Instant Water Heater", href: "/tap-to-shower/instant-heater" },
     ]
   },
+  {
+    label: "About",
+    href: "/about",
+  },
 ];
 
 export default function Navbar() {
