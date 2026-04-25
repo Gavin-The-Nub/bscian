@@ -1,0 +1,491 @@
+/* ==============================
+   S2 COLLECTION — PRODUCT DATA
+   ============================== */
+
+export interface Product {
+  name: string;
+  desc: string;
+  specs: string[];
+  config: string[];
+  code: string;
+}
+
+export interface Section {
+  id: string;
+  title: string;
+  overline: string;
+  products: Product[];
+}
+
+/* Shared descriptions */
+const DA =
+  "The S2 Collection, a harmonious fusion of design, functionality, versatility, and affordability tailored specifically for residential bathrooms.";
+const DB =
+  "S2 Faucet Series Washbasin, Kitchen, Shower Faucets available in Chrome, Matt Black (other colors on request)";
+
+/* Shared compliance — identical for every product */
+export const COMPLIANCE = [
+  "Chrome surface: pass 24h Acid Salt Spray Test",
+  "Matt Black: ASME 112.18.1",
+  "WRAS",
+  "LEED",
+  "WELS 3 Ticks PPP",
+];
+
+/* Shared feature badges */
+export const FEATURES = [
+  { label: "Water Saving", icon: "💧" },
+  { label: "Precision Engineering", icon: "⚙" },
+  { label: "Easy Installation", icon: "🔧" },
+  { label: "3 Year Warranty", icon: "🛡" },
+];
+
+/* ==============================
+   SECTIONS
+   ============================== */
+export const sections: Section[] = [
+  /* ── WASHBASIN ── */
+  {
+    id: "washbasin",
+    title: "Washbasin",
+    overline: "Basin Faucets & Taps",
+    products: [
+      {
+        name: "Washbasin Mixer Faucet (Reach 113mm)",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Deck mounted",
+          "Easy installation",
+          "Brass Body",
+          "Zinc Handle",
+          "28mm Single Lever Ceramic Cartridge",
+          "Reach 113mm",
+          "450mm long Connection Hoses",
+        ],
+        config: [
+          "SaveWater 1.0 gpm / 3.8 lpm",
+          "SaveWater 0.5 gpm / 1.9 lpm",
+          "Fittings (Push Pop-Up Waste, P-Trap, Angle Valves)",
+        ],
+        code: "S2-1101",
+      },
+      {
+        name: "Vessel Mixer Faucet (Reach 113mm)",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Deck mounted",
+          "Easy installation",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Single Lever Ceramic Cartridge",
+          "Reach 113mm",
+          "450mm long Connection Hoses",
+        ],
+        config: [
+          "SaveWater 1.0 gpm / 3.8 lpm",
+          "SaveWater 0.5 gpm / 1.9 lpm",
+          "Fittings (Push Pop-Up Waste, P-Trap, Angle Valves)",
+        ],
+        code: "S2-1102",
+      },
+      {
+        name: "Basin Tap (Reach 116mm)",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Deck mounted",
+          "Easy installation",
+          "Brass Body",
+          "Zinc Handle",
+          "28mm Single Lever Ceramic Cartridge",
+          "Reach 116mm",
+        ],
+        config: [
+          "SaveWater 1.0 gpm / 3.8 lpm",
+          "SaveWater 0.5 gpm / 1.9 lpm",
+          "Secure Fixing Nut with Screws",
+          "25mm Single Lever Cartridge",
+          "Fittings (Push Pop-Up Waste, P-Trap, Angle Valve, Connection Hose)",
+        ],
+        code: "S2-1101C",
+      },
+      {
+        name: "Vessel Basin Tap (Reach 116mm)",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Deck mounted",
+          "Easy installation",
+          "Brass Body",
+          "Zinc Handle",
+          "28mm Single Lever Ceramic Cartridge",
+          "Reach 116mm",
+        ],
+        config: [
+          "SaveWater 1.0 gpm / 3.8 lpm",
+          "SaveWater 0.5 gpm / 1.9 lpm",
+          "Secure Fixing Nut with Screws",
+          "Fittings (Push Pop-Up Waste, P-Trap, Angle Valve, Connection Hose)",
+        ],
+        code: "S2-1102C",
+      },
+    ],
+  },
+
+  /* ── KITCHEN ── */
+  {
+    id: "kitchen",
+    title: "Kitchen",
+    overline: "Kitchen Faucets",
+    products: [
+      {
+        name: "Kitchen Mixer Faucet (Reach 201mm)",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Deck mounted",
+          "Easy installation",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Single Lever Ceramic Cartridge",
+          "360° Degree Swivel Spout",
+          "Reach 201mm",
+          "450mm long Connection Hoses",
+        ],
+        config: [
+          "Faucet 1.0 gpm / 3.8 lpm",
+          "Faucet 1.5 gpm / 5.7 lpm",
+          "Fittings (Angle Valves)",
+        ],
+        code: "S2-1140",
+      },
+      {
+        name: "Kitchen Mixer Faucet (Reach 206mm)",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Deck mounted",
+          "Easy installation",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Single Lever Ceramic Cartridge",
+          "360° Degree Swivel Spout",
+          "Reach 206mm",
+          "450mm long Connection Hoses",
+        ],
+        config: [
+          "Faucet 1.0 gpm / 3.8 lpm",
+          "Faucet 1.5 gpm / 5.7 lpm",
+          "Fittings (Angle Valves)",
+        ],
+        code: "S2-1141",
+      },
+    ],
+  },
+
+  /* ── SHOWER & BATH (EXPOSED) ── */
+  {
+    id: "shower-exposed",
+    title: "Shower & Bath — Exposed Solutions",
+    overline: "Exposed Installations",
+    products: [
+      {
+        name: "Shower Mixer Faucet",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Wall mounted",
+          "Easy installation",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Single Lever Ceramic Cartridge",
+        ],
+        config: ["Noise Reducer", "Back Check Valves"],
+        code: "S2-1161",
+      },
+      {
+        name: "Shower Mixer Faucet Set with Hand Shower",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Wall mounted",
+          "Easy installation",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Single Lever Ceramic Cartridge",
+          "Hand Shower 3 function",
+          "2.0m Shower Hose",
+        ],
+        config: [
+          "SaveWater 2.0 gpm / 7.6 lpm",
+          "Hand Shower 1 function",
+          "PVC Shower Hose",
+          "1.5m Shower Hose",
+          "Noise Reducer",
+          "Back Check Valves",
+        ],
+        code: "S2-1161-SET1",
+      },
+      {
+        name: "Shower Mixer Faucet Set with Raiser Rail",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Wall mounted",
+          "Easy installation",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Single Lever Ceramic Cartridge",
+          "Hand Shower 3 function",
+          "1.5m Shower Hose",
+          "Shower Raiser Rail",
+        ],
+        config: [
+          "Hand Shower 2.0 gpm / 7.6 lpm",
+          "Hand Shower 1 function",
+          "PVC Shower Hose",
+          "Noise Reducer",
+          "Back Check Valves",
+        ],
+        code: "S2-1161-SET2",
+      },
+      {
+        name: "Shower System",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Single Lever Ceramic Cartridge",
+          "Height Adjustable Shower Pipe with Diverter",
+          "Hand Shower 3 function",
+          "1.5m Shower Hose",
+          "Rectangular Overhead Shower",
+        ],
+        config: [
+          "Hand Shower 2.0 gpm / 7.6 lpm",
+          "Overhead Shower 2.5 gpm / 9.5 lpm",
+          "Round/Square Overhead Shower",
+          "PVC Shower Hose",
+          "Noise Reducer",
+          "Back Check Valves",
+          "Extension Pipe 300mm",
+        ],
+        code: "S2-1171-SQSET",
+      },
+      {
+        name: "Bath Shower Mixer Faucet",
+        desc: DA,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Wall mounted",
+          "Easy installation",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Single Lever Ceramic Cartridge",
+          "Diverter Spout",
+          "Tub Spout with High Flow Aerator >20 lpm",
+        ],
+        config: ["Noise Reducer", "Back Check Valves"],
+        code: "S2-1181",
+      },
+      {
+        name: "Bath Shower Mixer Faucet with Hand Shower",
+        desc: DB,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Mixer Ceramic Cartridge",
+          "Diverter Spout",
+          "Tub Spout with High Flow Aerator > 20lpm",
+          "Hand Shower 3 function",
+          "1.5m Shower Hose",
+          "Wall Bracket adjustable",
+        ],
+        config: [
+          "Hand Shower 2.0 gpm / 7.6 lpm",
+          "Shower Rail instead of Wall Bracket",
+          "PVC Shower Hose",
+          "Noise Reducer",
+          "Back Check Valves",
+        ],
+        code: "S2-1181SET",
+      },
+    ],
+  },
+
+  /* ── SHOWER & BATH (CONCEALED) ── */
+  {
+    id: "shower-concealed",
+    title: "Shower & Bath — Concealed Solutions",
+    overline: "Concealed Installations",
+    products: [
+      {
+        name: "Concealed Shower Mixer Faucet",
+        desc: DB,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Mixer Ceramic Cartridge",
+          "Hand Shower 3 function",
+          "Wall Bracket Hand Shower Holder with G½ Connection",
+        ],
+        config: [
+          "In Wall Installation Box",
+          "Riser Rail with Elbow",
+          "Thermostatic Solution",
+        ],
+        code: "S2-1192-H",
+      },
+      {
+        name: "Concealed Shower Mixer Faucet",
+        desc: DB,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Mixer Ceramic Cartridge",
+          "Round Shower Arm",
+          "Rectangular Overhead Shower",
+        ],
+        config: [
+          "Overhead Shower 2.5 gpm / 9.5 lpm",
+          "Square / Round Overhead Shower",
+          "Rectangular Shower Arm",
+          "In Wall Installation Box",
+          "Thermostatic Solution",
+        ],
+        code: "S2-1192-W",
+      },
+      {
+        name: "Concealed Shower Mixer Faucet",
+        desc: DB,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Mixer Ceramic Cartridge",
+          "Round Ceiling Shower Pipe",
+          "Rectangular Overhead Shower",
+        ],
+        config: [
+          "Overhead Shower 2.5 gpm / 9.5 lpm",
+          "Square / Round Overhead Shower",
+          "Square Ceiling Pipe",
+          "In Wall Installation Box",
+          "Thermostatic Solution",
+        ],
+        code: "S2-1192-C",
+      },
+      {
+        name: "Concealed Shower Mixer Faucet",
+        desc: DB,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Brass Body with Diverter",
+          "Zinc Handle",
+          "35mm Mixer Ceramic Cartridge with Diverter",
+          "Rectangular Shower Arm",
+          "Rectangular Overhead Shower",
+          "Hand Shower 3 function",
+          "Wall Bracket Hand Shower Holder with G½ Connection",
+        ],
+        config: [
+          "Overhead Shower 2.5 gpm / 9.5 lpm",
+          "Square / Round Overhead Shower",
+          "In Wall Installation Box",
+          "Thermostatic Solution",
+          "Square Shower Arm",
+          "PVC Shower Hose",
+        ],
+        code: "S2-1783-SQSET2-W",
+      },
+      {
+        name: "Concealed Shower Mixer Faucet",
+        desc: DB,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Brass Body with Diverter",
+          "Zinc Handle",
+          "35mm Mixer Ceramic Cartridge with Diverter",
+          "Round Ceiling Shower Pipe",
+          "Rectangular Overhead Shower",
+          "Hand Shower 3 function",
+          "Wall Bracket Hand Shower Holder with G½ Connection",
+        ],
+        config: [
+          "Overhead Shower 2.5 gpm / 9.5 lpm",
+          "Round / Square Overhead Shower",
+          "In Wall Installation Box",
+          "Thermostatic Solution",
+          "Square Ceiling Shower Pipe",
+          "Shower Rail instead of Wall Bracket",
+          "PVC Shower Hose",
+        ],
+        code: "S2-1783-SQSET2-C",
+      },
+      {
+        name: "Concealed Shower Mixer Faucet",
+        desc: DB,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Brass Body",
+          "Zinc Handle",
+          "35mm Mixer Ceramic Cartridge",
+          "Tub Spout with High Flow Aerator > 20lpm",
+        ],
+        config: [
+          "In Wall Installation Box",
+          "Thermostatic Solution",
+        ],
+        code: "S2-1192-T",
+      },
+      {
+        name: "Concealed Bath Shower Mixer Faucet",
+        desc: DB,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Brass Body with Diverter",
+          "Zinc Handle",
+          "35mm Mixer Ceramic Cartridge with Diverter",
+          "Round Ceiling Shower Pipe",
+          "Rectangular Overhead Shower",
+          "Tub Spout with High Flow Aerator > 20lpm",
+        ],
+        config: [
+          "Overhead Shower 2.5 gpm / 9.5 lpm",
+          "Square Overhead Shower",
+          "In Wall Installation Box",
+          "Thermostatic Solution",
+          "Square Ceiling Shower Pipe",
+        ],
+        code: "S2-1783-SQSET1-C",
+      },
+      {
+        name: "Concealed Bath Shower Mixer Faucet",
+        desc: DB,
+        specs: [
+          "Finishes Chrome, Matt Black",
+          "Brass Body with Diverter",
+          "Zinc Handle",
+          "35mm Mixer Ceramic Cartridge with Diverter",
+          "Rectangular Shower Arm",
+          "Rectangular Overhead Shower",
+          "Tub Spout with High Flow Aerator > 20lpm",
+        ],
+        config: [
+          "Overhead Shower 2.5 gpm / 9.5 lpm",
+          "Square Overhead Shower",
+          "In Wall Installation Box",
+          "Thermostatic Solution",
+          "Round Shower Arm",
+        ],
+        code: "S2-1783-SQSET1-W",
+      },
+    ],
+  },
+];

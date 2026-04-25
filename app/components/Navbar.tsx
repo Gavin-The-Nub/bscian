@@ -5,6 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const navLinks = [
+  {
+    label: "Products Collection",
+    href: "/collections",
+    items: [
+      { label: "S2 Collection", href: "/collections/s2" },
+    ],
+  },
   { 
     label: "Tap-to-Shower", 
     href: "/tap-to-shower",
