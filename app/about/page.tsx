@@ -466,13 +466,13 @@ export default function AboutPage() {
               variants={fadeUp}
               className="group relative bg-bg-main overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-shadow duration-700"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden bg-[#f5f5f5]">
                 <Image
                   src="/images/about/ISO 9001.webp"
                   alt="ISO 9001:2015 Quality Management System Certificate"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="object-contain transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="p-6 border-t border-text-main/5">
@@ -490,13 +490,13 @@ export default function AboutPage() {
               variants={fadeUp}
               className="group relative bg-bg-main overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-shadow duration-700"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden bg-[#f5f5f5]">
                 <Image
                   src="/images/about/ISO 14001.webp"
                   alt="ISO 14001:2015 Environmental Management System Certificate"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="object-contain transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="p-6 border-t border-text-main/5">
