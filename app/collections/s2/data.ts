@@ -1,21 +1,4 @@
-/* ==============================
-   S2 COLLECTION — PRODUCT DATA
-   ============================== */
-
-export interface Product {
-  name: string;
-  desc: string;
-  specs: string[];
-  config: string[];
-  code: string;
-}
-
-export interface Section {
-  id: string;
-  title: string;
-  overline: string;
-  products: Product[];
-}
+import type { Product, Section } from "../../components/CollectionLayout";
 
 /* Shared descriptions */
 const DA =

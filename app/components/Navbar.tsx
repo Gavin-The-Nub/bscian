@@ -10,6 +10,8 @@ const navLinks = [
     href: "/collections",
     items: [
       { label: "S2 Collection", href: "/collections/s2" },
+      { label: "SUS Collection", href: "/collections/sus" },
+      { label: "LINE Collection", href: "/collections/line" },
     ],
   },
   { 

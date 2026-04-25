@@ -3,16 +3,16 @@
 import CollectionLayout from "../../components/CollectionLayout";
 import { sections, COMPLIANCE, FEATURES } from "./data";
 
-export default function S2CollectionPage() {
+export default function SUSCollectionPage() {
   return (
     <CollectionLayout
       config={{
-        bgText: "S2",
-        title: "S2",
+        bgText: "SUS",
+        title: "SUS",
         titleAccent: "Collection",
         description:
-          "A harmonious fusion of design, functionality, versatility, and affordability — engineered for residential bathrooms and kitchens. Available in Chrome and Matt Black.",
-        verticalLabel: "S2 / Faucets",
+          "Premium faucets and fixtures crafted from Stainless Steel 304 — combining durability, hygiene, and a timeless brushed finish for modern living spaces.",
+        verticalLabel: "SUS / Stainless Steel",
         sections,
         compliance: COMPLIANCE,
         features: FEATURES,
