@@ -20,6 +20,10 @@ const navLinks = [
     label: "About",
     href: "/about",
   },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
 ];
 
 export default function Navbar() {
