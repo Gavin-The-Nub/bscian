@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useParams, notFound } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import SectionWrapper from "../../components/SectionWrapper";
@@ -15,16 +15,16 @@ import { ImageComparisonSlider } from "@/components/ui/image-comparison-slider-h
 /* ==============================
    ANIMATION VARIANTS
    ============================== */
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as const },
   },
 };
 
-const stagger = {
+const stagger: Variants = {
   show: {
     transition: { staggerChildren: 0.1 },
   },
@@ -94,8 +94,8 @@ export default function ProductDetailPage() {
   }
 
   const currentSpecs = product.variants 
-    ? product.variants[activeVariant].specs 
-    : product.specGroups || [];
+    ? (product.variants[activeVariant]?.specs || [])
+    : (product.specGroups || []);
 
   return (
     <>
@@ -153,13 +153,13 @@ export default function ProductDetailPage() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] as const }}
                 className="relative overflow-hidden aspect-[4/5] shadow-[0_32px_64px_rgba(0,0,0,0.12)]"
               >
                 <EditorialImage 
                   src={product.variants 
-                    ? product.variants[activeVariant].heroImage || product.variants[activeVariant].image || product.heroImage || product.image 
-                    : product.heroImage || product.image} 
+                    ? (product.variants[activeVariant]?.heroImage || product.variants[activeVariant]?.image || product.heroImage || product.image) 
+                    : (product.heroImage || product.image)} 
                   alt={product.name} 
                   aspect="4/5"
                   priority
@@ -193,13 +193,13 @@ export default function ProductDetailPage() {
                     ))}
                  </div>
                  
-                 {product.variants[activeVariant].warranty && (
+                 {product.variants[activeVariant]?.warranty && (
                     <motion.p 
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       className="mt-6 font-body text-sm text-accent italic"
                     >
-                       * {product.variants[activeVariant].warranty}
+                       * {product.variants[activeVariant]?.warranty}
                     </motion.p>
                  )}
               </div>
