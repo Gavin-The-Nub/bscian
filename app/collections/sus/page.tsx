@@ -13,6 +13,7 @@ export default function SUSCollectionPage() {
         description:
           "Premium faucets and fixtures crafted from Stainless Steel 304 — combining durability, hygiene, and a timeless brushed finish for modern living spaces.",
         verticalLabel: "SUS / Stainless Steel",
+        collectionSlug: "sus",
         sections,
         compliance: COMPLIANCE,
         features: FEATURES,

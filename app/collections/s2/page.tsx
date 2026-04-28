@@ -13,6 +13,7 @@ export default function S2CollectionPage() {
         description:
           "A harmonious fusion of design, functionality, versatility, and affordability — engineered for residential bathrooms and kitchens. Available in Chrome and Matt Black.",
         verticalLabel: "S2 / Faucets",
+        collectionSlug: "s2",
         sections,
         compliance: COMPLIANCE,
         features: FEATURES,

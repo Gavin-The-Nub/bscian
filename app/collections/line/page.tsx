@@ -13,6 +13,7 @@ export default function LINECollectionPage() {
         description:
           "Washbasin, kitchen, and shower taps available in Chrome — precision-engineered with brass construction and ceramic cartridges for reliable, long-lasting performance.",
         verticalLabel: "LINE / Taps",
+        collectionSlug: "line",
         sections,
         compliance: COMPLIANCE,
         features: FEATURES,
