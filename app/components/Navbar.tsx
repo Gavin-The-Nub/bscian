@@ -12,6 +12,9 @@ const navLinks = [
       { label: "S2 Collection", href: "/collections/s2" },
       { label: "SUS Collection", href: "/collections/sus" },
       { label: "LINE Collection", href: "/collections/line" },
+      { label: "Shower Collection", href: "/collections/shower" },
+      { label: "Kitchen Collection", href: "/collections/kitchen" },
+      { label: "Self Closing Taps", href: "/collections/self-closing" },
     ],
   },
   { 

@@ -13,6 +13,21 @@ import {
   COMPLIANCE as susCompliance,
   FEATURES as susFeatures,
 } from "./sus/data";
+import {
+  sections as showerSections,
+  COMPLIANCE as showerCompliance,
+  FEATURES as showerFeatures,
+} from "./shower/data";
+import {
+  sections as kitchenSections,
+  COMPLIANCE as kitchenCompliance,
+  FEATURES as kitchenFeatures,
+} from "./kitchen/data";
+import {
+  sections as selfClosingSections,
+  COMPLIANCE as selfClosingCompliance,
+  FEATURES as selfClosingFeatures,
+} from "./self-closing/data";
 import type { Product, Section } from "../components/CollectionLayout";
 
 export interface CollectionMeta {
@@ -48,6 +63,30 @@ const collections: Record<string, CollectionMeta> = {
     sections: susSections,
     compliance: susCompliance,
     features: susFeatures,
+  },
+  shower: {
+    slug: "shower",
+    title: "Shower",
+    titleAccent: "Collection",
+    sections: showerSections,
+    compliance: showerCompliance,
+    features: showerFeatures,
+  },
+  kitchen: {
+    slug: "kitchen",
+    title: "Kitchen",
+    titleAccent: "Collection",
+    sections: kitchenSections,
+    compliance: kitchenCompliance,
+    features: kitchenFeatures,
+  },
+  "self-closing": {
+    slug: "self-closing",
+    title: "Self Closing",
+    titleAccent: "Taps & Flush Valves",
+    sections: selfClosingSections,
+    compliance: selfClosingCompliance,
+    features: selfClosingFeatures,
   },
 };
 

@@ -16,6 +16,8 @@ export interface Product {
   code: string;
   image?: string;
   placeholder?: boolean;
+  compliance?: string[];
+  features?: { label: string; icon: string }[];
 }
 
 export interface Section {

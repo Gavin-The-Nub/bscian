@@ -75,6 +75,8 @@ export default function ProductDetailPage() {
   }
 
   const { product, section, collection } = result;
+  const compliance = product.compliance ?? collection.compliance;
+  const features = product.features ?? collection.features;
 
   return (
     <>
@@ -198,27 +200,29 @@ export default function ProductDetailPage() {
               )}
 
               {/* Compliance */}
-              <motion.div variants={fadeUp} className="mb-8">
-                <h2 className="font-body text-[10px] font-semibold uppercase tracking-[0.25em] text-text-main mb-4 flex items-center gap-3">
-                  <span className="h-px w-6 bg-text-main/20" />
-                  Compliant With
-                </h2>
-                <div className="flex flex-wrap gap-2">
-                  {collection.compliance.map((c, i) => (
-                    <span
-                      key={i}
-                      className="font-body text-[10px] text-text-body/60 bg-bg-alt px-3 py-1.5 border border-text-main/5"
-                    >
-                      {c}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
+              {compliance.length > 0 && (
+                <motion.div variants={fadeUp} className="mb-8">
+                  <h2 className="font-body text-[10px] font-semibold uppercase tracking-[0.25em] text-text-main mb-4 flex items-center gap-3">
+                    <span className="h-px w-6 bg-text-main/20" />
+                    Compliant With
+                  </h2>
+                  <div className="flex flex-wrap gap-2">
+                    {compliance.map((c, i) => (
+                      <span
+                        key={i}
+                        className="font-body text-[10px] text-text-body/60 bg-bg-alt px-3 py-1.5 border border-text-main/5"
+                      >
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
               {/* Feature Badges */}
               <motion.div variants={fadeUp}>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-text-main/10">
-                  {collection.features.map((f) => (
+                  {features.map((f) => (
                     <div
                       key={f.label}
                       className="flex flex-col items-center gap-1.5 py-3"
