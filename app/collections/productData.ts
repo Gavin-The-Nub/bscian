@@ -28,6 +28,31 @@ import {
   COMPLIANCE as selfClosingCompliance,
   FEATURES as selfClosingFeatures,
 } from "./self-closing/data";
+import {
+  sections as sensorSections,
+  COMPLIANCE as sensorCompliance,
+  FEATURES as sensorFeatures,
+} from "./sensor/data";
+import {
+  sections as bathroomSections,
+  COMPLIANCE as bathroomCompliance,
+  FEATURES as bathroomFeatures,
+} from "./bathroom/data";
+import {
+  sections as furnitureSections,
+  COMPLIANCE as furnitureCompliance,
+  FEATURES as furnitureFeatures,
+} from "./furniture/data";
+import {
+  sections as bidetSections,
+  COMPLIANCE as bidetCompliance,
+  FEATURES as bidetFeatures,
+} from "./bidet-spray/data";
+import {
+  sections as fittingsSections,
+  COMPLIANCE as fittingsCompliance,
+  FEATURES as fittingsFeatures,
+} from "./fittings/data";
 import type { Product, Section } from "../components/CollectionLayout";
 
 export interface CollectionMeta {
@@ -87,6 +112,46 @@ const collections: Record<string, CollectionMeta> = {
     sections: selfClosingSections,
     compliance: selfClosingCompliance,
     features: selfClosingFeatures,
+  },
+  sensor: {
+    slug: "sensor",
+    title: "Sensor",
+    titleAccent: "Collection",
+    sections: sensorSections,
+    compliance: sensorCompliance,
+    features: sensorFeatures,
+  },
+  bathroom: {
+    slug: "bathroom",
+    title: "Bathroom",
+    titleAccent: "Collection",
+    sections: bathroomSections,
+    compliance: bathroomCompliance,
+    features: bathroomFeatures,
+  },
+  furniture: {
+    slug: "furniture",
+    title: "Furniture",
+    titleAccent: "Collection",
+    sections: furnitureSections,
+    compliance: furnitureCompliance,
+    features: furnitureFeatures,
+  },
+  "bidet-spray": {
+    slug: "bidet-spray",
+    title: "Bidet Spray",
+    titleAccent: "Collection",
+    sections: bidetSections,
+    compliance: bidetCompliance,
+    features: bidetFeatures,
+  },
+  fittings: {
+    slug: "fittings",
+    title: "Fittings",
+    titleAccent: "Collection",
+    sections: fittingsSections,
+    compliance: fittingsCompliance,
+    features: fittingsFeatures,
   },
 };
 

@@ -15,6 +15,11 @@ const navLinks = [
       { label: "Shower Collection", href: "/collections/shower" },
       { label: "Kitchen Collection", href: "/collections/kitchen" },
       { label: "Self Closing Taps", href: "/collections/self-closing" },
+      { label: "Sensor Collection", href: "/collections/sensor" },
+      { label: "Bathroom Collection", href: "/collections/bathroom" },
+      { label: "Furniture Collection", href: "/collections/furniture" },
+      { label: "Bidet Spray Collection", href: "/collections/bidet-spray" },
+      { label: "Fittings Collection", href: "/collections/fittings" },
     ],
   },
   { 
