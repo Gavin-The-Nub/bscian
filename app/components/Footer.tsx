@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const footerLinks = [
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-  { label: "Imprint", href: "#" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Request Information", href: "/tap-to-shower#inquiry" },
 ];
 
 export default function Footer() {
@@ -15,28 +16,30 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Logo & tagline */}
           <div>
-            <a
-              href="#"
+            <Link
+              href="/"
               className="font-heading text-3xl italic text-bg-main tracking-tight"
             >
               BSC
-            </a>
+            </Link>
             <p className="font-body text-[10px] uppercase tracking-[0.25em] text-bg-main/40 mt-2">
               Bathroom · Sanitary · Construction
             </p>
           </div>
 
-          {/* Links */}
-          <div className="flex flex-wrap gap-6 md:gap-10">
-            {footerLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="font-body text-[11px] font-medium uppercase tracking-[0.2em] text-bg-main/60 hover:text-accent transition-colors duration-500"
-              >
-                {link.label}
-              </a>
-            ))}
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
+            {/* Links */}
+            <div className="flex flex-wrap gap-6 md:gap-10">
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="font-body text-xs font-medium uppercase tracking-[0.2em] text-bg-main/80 hover:text-accent transition-colors duration-500"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -46,20 +49,20 @@ export default function Footer() {
             © {new Date().getFullYear()} BSC. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a
+            <Link
               href="mailto:info@bsundc.com"
               className="font-body text-[10px] text-bg-main/30 hover:text-accent transition-colors duration-500 tracking-wider"
             >
               info@bsundc.com
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body text-[10px] text-bg-main/30 hover:text-accent transition-colors duration-500 tracking-wider uppercase"
             >
               LinkedIn
-            </a>
+            </Link>
           </div>
         </div>
       </div>

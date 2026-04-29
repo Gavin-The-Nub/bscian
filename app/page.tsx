@@ -10,6 +10,7 @@ import Button from "./components/Button";
 import VideoShowcase from "./components/VideoShowcase";
 import CollectionCarousel from "./components/CollectionCarousel";
 import Footer from "./components/Footer";
+import Link from "next/link";
 
 /* ==============================
    ANIMATION VARIANTS
@@ -85,20 +86,20 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
-                  <a href="/tap-to-shower" className="w-full sm:w-auto">
+                  <Link href="/collections" className="w-full sm:w-auto">
                     <Button
                       variant="primary"
                       size="lg"
                       className="group w-full sm:w-auto"
                     >
-                      Explore Tap-to-Shower
+                      Explore Collections
                     </Button>
-                  </a>
-                  {/* <a href="#contact" className="w-full sm:w-auto">
+                  </Link>
+                  <Link href="/contact" className="w-full sm:w-auto">
                     <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                       Contact Us
                     </Button>
-                  </a> */}
+                  </Link>
                 </div>
               </motion.div>
             </div>
@@ -169,7 +170,7 @@ export default function Home() {
 
             <motion.h2
               variants={fadeUp}
-              className="font-heading text-3xl sm:text-4xl leading-[0.95] tracking-tight text-text-main mb-4"
+              className="font-heading text-3xl sm:text-4xl leading-[0.95] tracking-tight text-text-white mb-4"
             >
               Tap-to-<em className="text-accent italic">Shower</em>
               <br />
@@ -178,7 +179,7 @@ export default function Home() {
 
             <motion.p
               variants={fadeUp}
-              className="font-body text-sm text-white md:text-text-body  leading-relaxed mb-6 max-w-sm"
+              className="font-body text-sm text-text-white md:text-text-body  leading-relaxed mb-6 max-w-sm"
             >
               Tap-to-Shower turns a single-line (cold-only) bathroom
               installation into a modern shower experience with a neat, upgraded
@@ -186,15 +187,31 @@ export default function Home() {
               — hot & cold comfort every day.
             </motion.p>
 
-            <motion.div variants={fadeUp}>
-              <a href="/tap-to-shower">
-                <Button
-                  variant="secondary"
-                  className="border-text-main/40 text-text-main hover:bg-text-main hover:text-bg-main"
-                >
-                  Explore Collection
-                </Button>
-              </a>
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.9,
+                  delay: 0.4,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+                className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
+                  <a href="/tap-to-shower" className="w-full sm:w-auto">
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      className="group w-full sm:w-auto"
+                    >
+                      Discover Tap-to-Shower™
+                    </Button>
+                  </a>
+                  <a href="/tap-to-shower#inquiry" className="w-full sm:w-auto">
+                    <Button variant="secondary" size="lg" className="w-full sm:w-auto text-text-white border-text-white" >
+                      Request Information
+                    </Button>
+                  </a>
+                </div>
             </motion.div>
           </motion.div>
         </div>
@@ -276,11 +293,22 @@ export default function Home() {
                 </motion.ul>
 
                 <motion.div variants={fadeUp}>
-                  <a href="/tap-to-shower">
-                    <Button variant="primary" className="group">
-                      Explore Collection
+                  <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
+                  <Link href="/tap-to-shower" className="w-full sm:w-auto">
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      className="group w-full sm:w-auto"
+                    >
+                      Discover Tap-to-Shower™
                     </Button>
-                  </a>
+                  </Link>
+                  <Link href="/tap-to-shower#inquiry" className="w-full sm:w-auto">
+                    <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+                      Request Information
+                    </Button>
+                  </Link>
+                </div>
                 </motion.div>
               </motion.div>
             </div>

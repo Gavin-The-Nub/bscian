@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useParams, notFound } from "next/navigation";
+import Image from "next/image";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -245,9 +246,11 @@ export default function ProductDetailPage() {
                           variants={fadeUp}
                           className="rounded-2xl border border-text-main/5 overflow-hidden shadow-2xl bg-bg-main p-8 lg:p-12 flex items-center justify-center"
                         >
-                           <img 
+                           <Image 
                               src="/images/tsc1-3.png" 
-                              alt={`${product.name} technical diagram`} 
+                              alt={`${product.name} technical diagram`}
+                              width={800}
+                              height={800}
                               className="w-full h-auto object-contain max-h-[600px]"
                            />
                         </motion.div>

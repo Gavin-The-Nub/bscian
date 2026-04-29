@@ -10,7 +10,7 @@ export interface SpecGroup {
 
 export interface ProductVariant {
   name: string;
-  warranty: string;
+  warranty?: string;
   specs: SpecGroup[];
   features?: string[];
   image?: string;
@@ -44,7 +44,7 @@ export const ttsCollections: CollectionProduct[] = [
     id: "complete-kit",
     name: "Complete Tap-to-Shower™ Kit",
     code: "TTS-K",
-    warranty: "3-Year Limited Warranty",
+    warranty: "Tap warranty: 3 years; heater warranty: contact for details",
     description: "The all-in-one package — tap, water heater, and connection set bundled together, ideal for a full cold-to-hot bathroom upgrade in one purchase.",
     heroDescription: "Our flagship bundle provides everything needed for a complete professional installation. Engineered for performance, designed for elegance.",
     image: "/images/shower.png",
@@ -196,7 +196,6 @@ export const ttsCollections: CollectionProduct[] = [
     variants: [
       {
         name: "Model A — ABS",
-        warranty: "3-Year Warranty",
         image: "/images/carousel/s2.png",
         heroImage: "/images/shower.png",
         specs: [
@@ -230,7 +229,6 @@ export const ttsCollections: CollectionProduct[] = [
       },
       {
         name: "Model B — Tempered Glass",
-        warranty: "1-Year Warranty",
         image: "/images/carousel/s2.png",
         heroImage: "/images/shower.png",
         specs: [
@@ -268,7 +266,7 @@ export const ttsCollections: CollectionProduct[] = [
     id: "upgrade-kit",
     name: "Upgrade Kit",
     code: "TTS-UK",
-    warranty: "3-Year Limited Warranty",
+    warranty: "Heater warranty: contact for details",
     description: "Water heater and connection set without the tap. Ideal for those who already have a compatible shower column.",
     heroDescription: "The essential upgrade package combining our high-performance water heater with specialized connection hardware.",
     image: "/images/hero.png",
@@ -281,7 +279,6 @@ export const ttsCollections: CollectionProduct[] = [
         items: [
           { label: "Mount", value: "Wall Hung" },
           { label: "Color", value: "White / Black" },
-          { label: "Warranty", value: "3 Year" },
           { label: "Voltage", value: "220 – 240V, 50/60 Hz" },
           { label: "Heating Element", value: "Cast Aluminum" },
           { label: "Display", value: "Digital LED Display" },
