@@ -1,9 +1,10 @@
+import { Settings2, ShieldCheck, Wrench } from "lucide-react";
 import type { Section } from "../../components/CollectionLayout";
 
 const FEAT = [
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "3 Year Warranty", icon: "🛡" },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "3 Year Warranty", icon: ShieldCheck },
 ];
 
 export const COMPLIANCE: string[] = [];

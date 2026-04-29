@@ -1,9 +1,10 @@
+import { Droplets, Settings2, Wrench, ShieldCheck } from "lucide-react";
 import type { Product, Section } from "../../components/CollectionLayout";
 
 const CONCEALED_FEATURES = [
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "3 Year Warranty", icon: "🛡" },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "3 Year Warranty", icon: ShieldCheck },
 ];
 
 export const COMPLIANCE = [
@@ -15,10 +16,10 @@ export const COMPLIANCE = [
 ];
 
 export const FEATURES = [
-  { label: "Water Saving", icon: "💧" },
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "3 Year Warranty", icon: "🛡" },
+  { label: "Water Saving", icon: Droplets },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "3 Year Warranty", icon: ShieldCheck },
 ];
 
 export const sections: Section[] = [

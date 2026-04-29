@@ -17,7 +17,7 @@ export interface Product {
   image?: string;
   placeholder?: boolean;
   compliance?: string[];
-  features?: { label: string; icon: string }[];
+  features?: { label: string; icon: React.ElementType }[];
 }
 
 export interface Section {
@@ -36,7 +36,7 @@ export interface CollectionConfig {
   collectionSlug: string;
   sections: Section[];
   compliance: string[];
-  features: { label: string; icon: string }[];
+  features: { label: string; icon: React.ElementType }[];
 }
 
 const stagger = {
@@ -101,7 +101,7 @@ function ProductCard({
               src={product.image}
               alt={product.name}
               fill
-              className="object-contain p-4 group-hover:scale-105 transition-transform duration-700"
+              className="object-contain  group-hover:scale-105 transition-transform duration-700"
             />
           ) : (
             <>

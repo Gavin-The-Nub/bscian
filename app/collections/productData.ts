@@ -61,7 +61,7 @@ export interface CollectionMeta {
   titleAccent: string;
   sections: Section[];
   compliance: string[];
-  features: { label: string; icon: string }[];
+  features: { label: string; icon: React.ElementType }[];
 }
 
 const collections: Record<string, CollectionMeta> = {

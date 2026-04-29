@@ -106,14 +106,14 @@ export default function ProductDetailPage() {
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative aspect-square bg-bg-feature border border-text-main/5 flex items-center justify-center overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
+              className="relative aspect-square bg-bg-feature border border-text-main/5 flex items-center justify-center overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] group "
             >
               {product.image ? (
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-contain p-8 md:p-12"
+                  className="object-contain group-hover:scale-105 transition-transform duration-500"
                   priority
                 />
               ) : (
@@ -154,7 +154,7 @@ export default function ProductDetailPage() {
 
               <motion.p
                 variants={fadeUp}
-                className="font-body text-sm md:text-base text-text-body/70 leading-relaxed mb-10 max-w-lg"
+                className="font-body text-sm md:text-base text-text-body leading-relaxed mb-10 max-w-lg"
               >
                 {product.desc}
               </motion.p>
@@ -169,7 +169,7 @@ export default function ProductDetailPage() {
                   {product.specs.map((spec, i) => (
                     <li
                       key={i}
-                      className="font-body text-sm text-text-body/70 flex items-start gap-3"
+                      className="font-body text-sm text-text-body flex items-start gap-3"
                     >
                       <span className="mt-2 w-1 h-1 rounded-full bg-accent/50 flex-shrink-0" />
                       {spec}
@@ -189,7 +189,7 @@ export default function ProductDetailPage() {
                     {product.config.map((cfg, i) => (
                       <li
                         key={i}
-                        className="font-body text-sm text-text-body/70 flex items-start gap-3"
+                        className="font-body text-sm text-text-body flex items-start gap-3"
                       >
                         <span className="mt-2 w-1 h-1 rounded-full bg-text-main/20 flex-shrink-0" />
                         {cfg}
@@ -210,7 +210,7 @@ export default function ProductDetailPage() {
                     {compliance.map((c, i) => (
                       <span
                         key={i}
-                        className="font-body text-[10px] text-text-body/60 bg-bg-alt px-3 py-1.5 border border-text-main/5"
+                        className="font-body text-[10px] text-text-body/80 bg-bg-alt px-3 py-1.5 border border-text-main/5"
                       >
                         {c}
                       </span>
@@ -227,8 +227,8 @@ export default function ProductDetailPage() {
                       key={f.label}
                       className="flex flex-col items-center gap-1.5 py-3"
                     >
-                      <span className="text-xl">{f.icon}</span>
-                      <span className="font-body text-[9px] uppercase tracking-[0.15em] text-text-body/60 text-center leading-tight">
+                      <f.icon size={24}/>
+                      <span className="font-body text-[9px] uppercase tracking-[0.15em] text-text-body/80 text-center leading-tight">
                         {f.label}
                       </span>
                     </div>

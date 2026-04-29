@@ -34,7 +34,6 @@ const fadeUp = {
    DATA
    ============================== */
 
-
 const stats = [
   { number: "30+", label: "Years of Experience" },
   { number: "5+", label: "Countries Served" },
@@ -51,7 +50,7 @@ export default function Home() {
       <Navbar />
 
       {/* ===== HERO ===== */}
-      <section className="relative lg:min-h-screen flex items-center lg:items-center bg-bg-main overflow-hidden">
+      <section className="relative lg:min-h-screen flex items-center lg:items-center overflow-hidden">
         <div className="mx-auto max-w-[1600px] w-full px-6 md:px-16 pb-16 md:pb-24 pt-28 lg:pt-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 lg:items-start">
             {/* Left — Copy */}
@@ -66,7 +65,10 @@ export default function Home() {
                 }}
                 className="flex flex-col items-center text-center lg:items-start lg:text-left"
               >
-                <Overline withLine className="mb-6 justify-center lg:justify-start w-full">
+                <Overline
+                  withLine
+                  className="mb-6 justify-center lg:justify-start w-full"
+                >
                   Bathroom · Sanitary · Construction
                 </Overline>
 
@@ -84,7 +86,11 @@ export default function Home() {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
                   <a href="/tap-to-shower" className="w-full sm:w-auto">
-                    <Button variant="primary" size="lg" className="group w-full sm:w-auto">
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      className="group w-full sm:w-auto"
+                    >
                       Explore Tap-to-Shower
                     </Button>
                   </a>
@@ -112,7 +118,7 @@ export default function Home() {
                   src="/images/hero.png"
                   alt="BSC premium chrome faucet on marble countertop"
                   aspect="4/5"
-                  priority  
+                  priority
                   className="shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
                 />
 
@@ -172,17 +178,20 @@ export default function Home() {
 
             <motion.p
               variants={fadeUp}
-              className="font-body text-sm text-text-body leading-relaxed mb-6 max-w-sm"
+              className="font-body text-sm text-white md:text-text-body  leading-relaxed mb-6 max-w-sm"
             >
-              Tap-to-Shower turns a single-line (cold-only) bathroom installation
-              into a modern shower experience with a neat, upgraded look. With
-              minimal installation work, it delivers the real upgrade — hot & cold
-              comfort every day.
+              Tap-to-Shower turns a single-line (cold-only) bathroom
+              installation into a modern shower experience with a neat, upgraded
+              look. With minimal installation work, it delivers the real upgrade
+              — hot & cold comfort every day.
             </motion.p>
 
             <motion.div variants={fadeUp}>
               <a href="/tap-to-shower">
-                <Button variant="secondary" className="border-text-main/40 text-text-main hover:bg-text-main hover:text-bg-main">
+                <Button
+                  variant="secondary"
+                  className="border-text-main/40 text-text-main hover:bg-text-main hover:text-bg-main"
+                >
                   Explore Collection
                 </Button>
               </a>
@@ -243,10 +252,10 @@ export default function Home() {
                   variants={fadeUp}
                   className="font-body text-lg text-text-body leading-relaxed mb-8 max-w-md"
                 >
-                  Tap-to-Shower turns a single-line (cold-only) bathroom installation
-                  into a modern shower experience with a neat, upgraded look. With
-                  minimal installation work, it delivers the real upgrade — hot & cold
-                  comfort every day.
+                  Tap-to-Shower turns a single-line (cold-only) bathroom
+                  installation into a modern shower experience with a neat,
+                  upgraded look. With minimal installation work, it delivers the
+                  real upgrade — hot & cold comfort every day.
                 </motion.p>
 
                 <motion.ul variants={fadeUp} className="space-y-4 mb-10">
@@ -353,7 +362,6 @@ export default function Home() {
                   {stat.label}
                 </span>
               </motion.div>
-
             ))}
           </motion.div>
         </div>

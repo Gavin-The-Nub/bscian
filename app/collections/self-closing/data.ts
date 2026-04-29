@@ -1,3 +1,4 @@
+import { Droplets, Settings2, Wrench, ShieldCheck } from "lucide-react";
 import type { Product, Section } from "../../components/CollectionLayout";
 
 const D = "Automatic Closing / Push Taps Washbasin, Kitchen, Shower in Chrome (other colors on request)";
@@ -32,10 +33,10 @@ const WC_COMPLIANCE = [
 export const COMPLIANCE = SC_COMPLIANCE;
 
 export const FEATURES = [
-  { label: "Water Saving", icon: "💧" },
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "1 Year Warranty", icon: "🛡" },
+  { label: "Water Saving", icon: Droplets },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "1 Year Warranty", icon: ShieldCheck },
 ];
 
 export const sections: Section[] = [

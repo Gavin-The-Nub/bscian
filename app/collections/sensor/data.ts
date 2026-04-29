@@ -1,3 +1,4 @@
+import { Settings2, Wrench, ShieldCheck, Droplets } from "lucide-react";
 import type { Product, Section } from "../../components/CollectionLayout";
 
 const D_TAP = "Choosing automatic sensor taps is a complex decision, critical for a positive, hygienic experience from a designer's vision. Maintenance teams, facility managers, engineers, and contractors prioritize reliability, easy installation, and time efficiency.";
@@ -17,18 +18,18 @@ const TAP_COMPLIANCE = [
 const FLUSH_COMPLIANCE = ["WRAS", "LEED"];
 
 const SOAP_FEATURES = [
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "1 Year Warranty", icon: "🛡" },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "1 Year Warranty", icon: ShieldCheck },
 ];
 
 export const COMPLIANCE = TAP_COMPLIANCE;
 
 export const FEATURES = [
-  { label: "Water Saving", icon: "💧" },
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "1 Year Warranty", icon: "🛡" },
+  { label: "Water Saving", icon: Droplets },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "1 Year Warranty", icon: ShieldCheck },
 ];
 
 export const sections: Section[] = [

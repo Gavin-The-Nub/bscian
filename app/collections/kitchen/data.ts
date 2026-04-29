@@ -1,4 +1,5 @@
-import type { Product, Section } from "../../components/CollectionLayout";
+import { Droplets, Settings2, Wrench, ShieldCheck, PanelBottom, PanelTop } from "lucide-react";
+import type { Product, Section }  from "../../components/CollectionLayout";
 
 const ph = (code: string): Product => ({
   name: "",
@@ -21,45 +22,45 @@ const SUS_COMPLIANCE = ["WRAS", "LEED", "WELS 3 Ticks PPP"];
 export const COMPLIANCE = FAUCET_COMPLIANCE;
 
 export const FEATURES = [
-  { label: "Water Saving", icon: "💧" },
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "3 Year Warranty", icon: "🛡" },
+  { label: "Water Saving", icon: Droplets },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "3 Year Warranty", icon: ShieldCheck },
 ];
 
 const FEAT_5YR = [
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "5 Year Warranty", icon: "🛡" },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "5 Year Warranty", icon: ShieldCheck },
 ];
 const FEAT_TM_5YR = [
-  { label: "Topmount", icon: "📐" },
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "5 Year Warranty", icon: "🛡" },
+  { label: "Topmount", icon: PanelBottom  },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "5 Year Warranty", icon: ShieldCheck },
 ];
 const FEAT_TM_3YR = [
-  { label: "Topmount", icon: "📐" },
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "3 Year Warranty", icon: "🛡" },
+  { label: "Topmount", icon: PanelTop },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "3 Year Warranty", icon: ShieldCheck },
 ];
 const FEAT_UM_5YR = [
-  { label: "Undermount", icon: "📐" },
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "5 Year Warranty", icon: "🛡" },
+  { label: "Undermount", icon: PanelBottom},
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "5 Year Warranty", icon: ShieldCheck },
 ];
 const FEAT_UM_1YR = [
-  { label: "Undermount", icon: "📐" },
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "1 Year Warranty", icon: "🛡" },
+  { label: "Undermount", icon: PanelBottom },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "1 Year Warranty", icon: ShieldCheck },
 ];
 const FEAT_1YR = [
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "1 Year Warranty", icon: "🛡" },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "1 Year Warranty", icon: ShieldCheck },
 ];
 
 export const sections: Section[] = [
@@ -633,9 +634,9 @@ export const sections: Section[] = [
         code: "G300",
         compliance: [],
         features: [
-          { label: "Precision Engineering", icon: "⚙" },
-          { label: "Easy Installation", icon: "🔧" },
-          { label: "3 Year Warranty", icon: "🛡" },
+          { label: "Precision Engineering", icon: Settings2 },
+          { label: "Easy Installation", icon: Wrench },
+          { label: "3 Year Warranty", icon: ShieldCheck },
         ],
       },
     ],

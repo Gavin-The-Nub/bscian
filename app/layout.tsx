@@ -27,7 +27,7 @@ export default function RootLayout({
         <div className="noise-overlay" aria-hidden="true" />
 
         {/* Editorial grid lines — desktop only */}
-        <div className="hidden lg:block" aria-hidden="true">
+        <div className="hidden lg:block pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
           <div className="grid-line" style={{ left: "8.33%" }} />
           <div className="grid-line" style={{ left: "33.33%" }} />
           <div className="grid-line" style={{ left: "66.66%" }} />

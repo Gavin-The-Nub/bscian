@@ -16,7 +16,7 @@ export default function VideoShowcase() {
   return (
     <section
       ref={containerRef}
-      className="relative bg-bg-main px-6 md:px-16 py-12 md:py-20"
+      className="relative px-6 md:px-16 py-12 md:py-20"
     >
       <div className="mx-auto max-w-[1600px]">
         <motion.div

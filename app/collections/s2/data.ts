@@ -1,5 +1,5 @@
 import type { Product, Section } from "../../components/CollectionLayout";
-
+import { Droplets, Settings2, Wrench, ShieldCheck } from "lucide-react";
 /* Shared descriptions */
 const DA =
   "The S2 Collection, a harmonious fusion of design, functionality, versatility, and affordability tailored specifically for residential bathrooms.";
@@ -17,10 +17,10 @@ export const COMPLIANCE = [
 
 /* Shared feature badges */
 export const FEATURES = [
-  { label: "Water Saving", icon: "💧" },
-  { label: "Precision Engineering", icon: "⚙" },
-  { label: "Easy Installation", icon: "🔧" },
-  { label: "3 Year Warranty", icon: "🛡" },
+  { label: "Water Saving", icon: Droplets },
+  { label: "Precision Engineering", icon: Settings2 },
+  { label: "Easy Installation", icon: Wrench },
+  { label: "3 Year Warranty", icon: ShieldCheck },
 ];
 
 /* ==============================
@@ -36,6 +36,7 @@ export const sections: Section[] = [
       {
         name: "Washbasin Mixer Faucet (Reach 113mm)",
         desc: DA,
+        image: "/images/collection/s2/S2-1101-CR-1920w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Deck mounted",
