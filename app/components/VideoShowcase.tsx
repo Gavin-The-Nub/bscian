@@ -29,6 +29,7 @@ export default function VideoShowcase() {
             loop
             playsInline
             className="w-full h-auto block grayscale transition-[filter] duration-[2000ms] ease-out hover:grayscale-0"
+            suppressHydrationWarning
           >
             <source src="/videos/showcase.mp4" type="video/mp4" />
           </video>
