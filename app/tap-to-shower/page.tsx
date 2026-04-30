@@ -165,10 +165,10 @@ export default function TapToShowerCollection() {
                 What is <em className="text-accent italic">Tap-to-Shower™</em>?
               </motion.h2>
               <motion.p variants={fadeUp} className="font-body text-lg text-text-body leading-relaxed mb-6">
-                Most standard bathrooms feature a single cold-water line. Upgrading to a hot and cold shower traditionally requires breaking tiles, rerouting pipes, and weeks of messy renovation.
+                Most Philippine bathrooms have a single cold-water line. Upgrading to a hot and cold shower has traditionally meant breaking tiles, rerouting pipes, and weeks of renovation.
               </motion.p>
               <motion.p variants={fadeUp} className="font-body text-lg text-text-body leading-relaxed">
-                Tap-to-Shower™ is our patented conversion system. By utilizing an elegant external PEX retrofit and a specialized connection kit, we convert your single cold line into a fully functional, thermostatic-ready hot and cold shower system — without concealing any new plumbing behind your walls.
+                Tap-to-Shower™ is a retrofit system. An external PEX line and a specialised connection kit convert a single cold-water line into a thermostatic-ready hot and cold shower without concealing new plumbing behind walls.
               </motion.p>
             </motion.div>
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={revealImage} className="relative aspect-square">
@@ -182,13 +182,13 @@ export default function TapToShowerCollection() {
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center max-w-3xl mx-auto mb-16">
              <motion.div variants={fadeUp} className="flex justify-center mb-6"><Overline withLine>The Facts</Overline></motion.div>
              <motion.h2 variants={fadeUp} className="font-heading text-4xl lg:text-5xl tracking-tight text-text-main">
-                Built to <em className="text-accent italic">Perform</em>
+                Five Things to <em className="text-accent italic">Know</em>
              </motion.h2>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               { icon: Clock, title: "30–45 Min Install" },
-              { icon: ShieldCheck, title: "3-Year Tap Warranty" },
+              { icon: ShieldCheck, title: "3-Year Limited Warranty" },
               { icon: Layers, title: "CB IEC 60335 Certified" },
               { icon: Wrench, title: "Single-Line PEX Retrofit" },
               { icon: Palette, title: "Chrome · Black · Brushed SS" }
@@ -210,14 +210,14 @@ export default function TapToShowerCollection() {
                 How It <em className="text-accent italic">Works</em>
               </motion.h2>
               <motion.p variants={fadeUp} className="font-body text-lg text-bg-main/70 leading-relaxed mb-10">
-                Our PEX retrofit connection set is designed for rapid, professional deployment. No concealed plumbing required.
+                The PEX retrofit connection set is designed for professional installation in 30 to 45 minutes. No concealed plumbing required.
               </motion.p>
               <div className="space-y-8">
                 {[
-                  "Mount the Tap-to-Shower column to existing cold point.",
-                  "Install the instant water heater and run the 6m cuttable PEX tube.",
-                  "Connect using our proprietary push connectors and safety valve.",
-                  "Enjoy your new hot & cold shower experience."
+                  "The Tap-to-Shower™ column mounts to the existing G½″ cold-water outlet.",
+                  "The instant water heater installs wall-hung, with a 6m cuttable PEX tube run to the column.",
+                  "Push connectors and a safety valve complete the connection.",
+                  "The retrofit is complete. Hot and cold water at the tap."
                 ].map((step, i) => (
                   <motion.div key={i} variants={fadeUp} className="flex gap-6 items-start">
                      <span className="font-heading text-3xl text-accent leading-none">0{i+1}</span>
@@ -244,25 +244,25 @@ export default function TapToShowerCollection() {
             {[
               { 
                 title: "Retailers / Distributors", 
-                desc: "Stock a category that sells itself in cold-water markets.",
+                desc: "Stock a single-line shower upgrade with a verified 3-year tap warranty and ready packaging. No assembly, no staff training required.",
                 cta: "Ask About Retail Packages",
                 type: "retail"
               },
               { 
                 title: "Developers / Builders", 
-                desc: "Standardise hot-water across single-line projects without rework.",
+                desc: "Specify hot water for single-line bathrooms without adding plumbing runs or redesigning the layout.",
                 cta: "Ask About Project Solutions",
                 type: "developer"
               },
               { 
                 title: "Architects / Specifiers", 
-                desc: "Specify a retrofit-friendly shower system with full datasheets.",
+                desc: "Specify a CB IEC 60335-certified shower system for single-line bathrooms. Full technical datasheets and dimensional drawings available on request.",
                 cta: "Request Specification Support",
                 type: "architect"
               },
               { 
                 title: "End Consumers", 
-                desc: "Get a hot shower without breaking your wall.",
+                desc: "Get a hot shower without opening your wall.",
                 cta: "Find Out Where to Buy",
                 type: "consumer"
               }
@@ -270,7 +270,7 @@ export default function TapToShowerCollection() {
               <motion.div key={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="bg-bg-main p-8 border border-text-main/10 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow duration-200">
                 <h3 className="font-heading text-2xl text-text-main mb-3">{group.title}</h3>
                 <p className="font-body text-text-body leading-relaxed flex-grow mb-8">{group.desc}</p>
-                <a href={`#inquiry?type=${group.type}`} className="mt-auto inline-flex w-fit">
+                <a href={group.type === "consumer" ? "/where-to-buy" : `#inquiry?type=${group.type}`} className="mt-auto inline-flex w-fit">
                   <Button variant="link" className="group/btn !p-0 !h-auto flex items-center gap-2 text-accent">
                     {group.cta} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </Button>
@@ -288,7 +288,7 @@ export default function TapToShowerCollection() {
                  <ShieldCheck className="w-full h-full max-w-[240px] text-text-main/5" strokeWidth={0.5} />
                  <div className="absolute inset-0 flex items-center justify-center p-8 text-center backdrop-blur-sm">
                     <p className="font-heading text-4xl md:text-5xl text-text-main max-w-sm tracking-tight leading-tight">
-                       Tested. <br/><em className="text-accent italic">Certified.</em> <br/>Proven.
+                       IEC 60335. <br/><em className="text-accent italic">Worldbex.</em> <br/>Three years.
                     </p>
                  </div>
               </div>
@@ -300,9 +300,9 @@ export default function TapToShowerCollection() {
               </motion.h2>
               <div className="space-y-8">
                  {[
-                   { title: "3-Year Tap Warranty", desc: "We stand behind our brass casting and ceramic cartridges with a comprehensive limited warranty." },
-                   { title: "CB IEC 60335 Certified", desc: "Our water heaters meet stringent international electrical safety standards." },
-                   { title: "Worldbex Featured", desc: "Proudly showcased at premier international building and construction expositions." }
+                   { title: "3-year limited warranty", desc: "Brass HP59 body and ceramic cartridges, covered for three years from date of purchase." },
+                   { title: "CB IEC 60335 certified", desc: "Instant water heaters meet international electrical safety standards under IEC 60335-2-35." },
+                   { title: "Worldbex 2026", desc: "Featured exhibitor at Worldbex 2026, SMX Convention Center, Pasay City, Philippines." }
                  ].map((signal, i) => (
                    <motion.div key={i} variants={fadeUp} className="flex gap-5">
                       <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
@@ -351,10 +351,10 @@ export default function TapToShowerCollection() {
             </motion.div>
             <div className="space-y-4">
               {[
-                { q: "Is the PEX tube durable enough for hot water?", a: "Yes, our PEX tubing is specifically rated for high-temperature and high-pressure applications, easily handling the output of the 3.5kW heater." },
-                { q: "Do I need a professional plumber?", a: "While the system is designed for straightforward installation, we recommend a certified professional to ensure warranty validity and optimal performance." },
-                { q: "Can I use my existing water heater?", a: "Tap-to-Shower is optimized to work with our proprietary instant water heaters for seamless integration, though it may be compatible with other standard systems." },
-                { q: "What finishes are available?", a: "Our core tap bodies are available in Chrome, Matt Black, and Brushed Stainless Steel to match any modern bathroom design." }
+                { q: "Is the PEX tube durable enough for hot water?", a: "Yes. The PEX tubing is rated for high-temperature and high-pressure applications and handles the output of the 3.5-kilowatt heater." },
+                { q: "Do I need a professional plumber?", a: "The system is designed for professional installation. A certified plumber or electrician is required to validate the warranty." },
+                { q: "Can I use my existing water heater?", a: "Tap-to-Shower\u2122 is optimised for the BSC instant water heater range. Compatibility with other systems depends on connection type and pressure rating \u2014 contact us for confirmation before purchase." },
+                { q: "What finishes are available?", a: "Tap bodies are available in Chrome, Matt Black, and Brushed Stainless Steel." }
               ].map((faq, i) => (
                 <FAQAccordion key={i} question={faq.q} answer={faq.a} />
               ))}
@@ -380,7 +380,7 @@ export default function TapToShowerCollection() {
                        Submit an <br/><em className="text-accent italic">Enquiry</em>
                     </motion.h2>
                     <motion.p variants={fadeUp} className="font-body text-text-body text-lg mb-10 leading-relaxed">
-                       Whether you&apos;re a retailer, developer, architect, or homeowner, our specialists are ready to provide specifications, pricing, and consultation.
+                       Specifications, technical drawings, and project pricing available on request. Submit an enquiry below or contact info@bsundc.com directly.
                     </motion.p>
                     <motion.div variants={fadeUp} className="space-y-6">
                        <div className="flex items-center gap-4 text-text-body">
@@ -389,7 +389,7 @@ export default function TapToShowerCollection() {
                        </div>
                        <div className="flex items-center gap-4 text-text-body">
                           <Check className="w-5 h-5 text-accent" />
-                          <span className="font-body text-sm uppercase tracking-widest">Bulk Pricing &amp; Project Rates</span>
+                          <span className="font-body text-sm uppercase tracking-widest">Bulk pricing and project rates available on request</span>
                        </div>
                        <div className="flex items-center gap-4 text-text-body">
                           <Check className="w-5 h-5 text-accent" />
@@ -428,26 +428,26 @@ export default function TapToShowerCollection() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                           <div>
                             <label htmlFor="inquiry-name" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Full Name</label>
-                            <input type="text" id="inquiry-name" name="name" disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all disabled:opacity-60 disabled:cursor-not-allowed" placeholder="Your name" />
+                            <input type="text" id="inquiry-name" name="name" disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all disabled:opacity-60 disabled:cursor-not-allowed" />
                           </div>
                           <div>
                             <label htmlFor="inquiry-email" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Email Address</label>
-                            <input type="email" id="inquiry-email" name="email" disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all disabled:opacity-60 disabled:cursor-not-allowed" placeholder="your@email.com" />
+                            <input type="email" id="inquiry-email" name="email" disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all disabled:opacity-60 disabled:cursor-not-allowed" />
                           </div>
                         </div>
                         {showCompany && (
                           <div>
                             <label htmlFor="inquiry-company" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Company <span className="text-text-body/50 normal-case tracking-normal">(optional)</span></label>
-                            <input type="text" id="inquiry-company" name="company" disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all disabled:opacity-60 disabled:cursor-not-allowed" placeholder="Company name" />
+                            <input type="text" id="inquiry-company" name="company" disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all disabled:opacity-60 disabled:cursor-not-allowed" />
                           </div>
                         )}
                         <div>
                           <label htmlFor="inquiry-message" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Message</label>
-                          <textarea id="inquiry-message" name="message" rows={5} disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all resize-y disabled:opacity-60 disabled:cursor-not-allowed" placeholder="Tell us about your project requirements..."></textarea>
+                          <textarea id="inquiry-message" name="message" rows={5} disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all resize-y disabled:opacity-60 disabled:cursor-not-allowed" placeholder="Tell us about your project or enquiry."></textarea>
                         </div>
                         <div className="bg-bg-alt border border-text-main/10 p-6 text-center">
                           <p className="font-body text-sm text-text-body mb-4">
-                            Online enquiries available shortly. In the meantime, contact us directly:
+                            The online enquiry form is in finalisation. Direct contact: info@bsundc.com or +86 158 21 48 42 72.
                           </p>
                           <a href="mailto:info@bsundc.com?subject=Tap-to-Shower Enquiry" className="inline-flex">
                             <Button variant="primary" size="lg" className="w-full sm:w-auto">

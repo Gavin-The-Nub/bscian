@@ -100,9 +100,8 @@ export default function ContactPage() {
               variants={fadeUp}
               className="font-body text-base md:text-lg text-text-body leading-relaxed max-w-xl"
             >
-              Whether you&apos;re looking for premium bathroom and kitchen
-              products or exploring partnership opportunities — we&apos;d love
-              to hear from you.
+              For bathroom and kitchen product enquiries or partnership
+              conversations, contact us below.
             </motion.p>
           </motion.div>
         </div>
@@ -503,7 +502,7 @@ export default function ContactPage() {
                   {/* Submit */}
                   <motion.div variants={fadeUp}>
                     <Button type="submit" variant="primary" size="lg" withArrow className="w-full md:w-auto">
-                      Send Enquiry
+                      Submit Enquiry
                     </Button>
                   </motion.div>
                 </form>

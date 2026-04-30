@@ -172,7 +172,7 @@ export default function Home() {
               variants={fadeUp}
               className="font-heading text-3xl sm:text-4xl leading-[0.95] tracking-tight text-text-white mb-4"
             >
-              Tap-to-<em className="text-accent italic">Shower</em>
+              Tap-to-<em className="text-accent italic">Shower™</em>
               <br />
               Collection
             </motion.h2>
@@ -181,10 +181,9 @@ export default function Home() {
               variants={fadeUp}
               className="font-body text-sm text-text-white md:text-text-body  leading-relaxed mb-6 max-w-sm"
             >
-              Tap-to-Shower turns a single-line (cold-only) bathroom
-              installation into a modern shower experience with a neat, upgraded
-              look. With minimal installation work, it delivers the real upgrade
-              — hot & cold comfort every day.
+              Tap-to-Shower™ turns a single-line (cold-only) bathroom
+              into a hot and cold shower without concealed plumbing or wall
+              work. Engineered in Germany and Denmark.
             </motion.p>
 
             <motion.div
@@ -260,7 +259,7 @@ export default function Home() {
                   variants={fadeUp}
                   className="font-heading text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-8 text-text-main"
                 >
-                  Tap-to-<em className="text-accent italic">Shower</em>
+                  Tap-to-<em className="text-accent italic">Shower™</em>
                   <br />
                   Collection
                 </motion.h2>
@@ -269,10 +268,9 @@ export default function Home() {
                   variants={fadeUp}
                   className="font-body text-lg text-text-body leading-relaxed mb-8 max-w-md"
                 >
-                  Tap-to-Shower turns a single-line (cold-only) bathroom
-                  installation into a modern shower experience with a neat,
-                  upgraded look. With minimal installation work, it delivers the
-                  real upgrade — hot & cold comfort every day.
+                  Tap-to-Shower™ turns a single-line (cold-only) bathroom
+                  into a hot and cold shower without concealed plumbing or wall
+                  work. Engineered in Germany and Denmark.
                 </motion.p>
 
                 <motion.ul variants={fadeUp} className="space-y-4 mb-10">
