@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Button from "../components/Button";
 import Overline from "../components/Overline";
 
 /* ==============================
@@ -69,7 +70,7 @@ export default function ContactPage() {
       <section className="relative flex items-end bg-bg-main overflow-hidden min-h-[50vh] lg:min-h-[60vh]">
         {/* Decorative large text background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-          <span className="font-heading text-[18vw] lg:text-[14vw] font-bold tracking-tighter text-text-main/[0.03] leading-none">
+          <span className="font-heading text-[18vw] lg:text-[14vw] font-normal tracking-tighter text-text-main/[0.03] leading-none">
             CONTACT
           </span>
         </div>
@@ -146,7 +147,7 @@ export default function ContactPage() {
                   </span>
                   <a
                     href="mailto:info@bsundc.com"
-                    className="font-body text-sm text-text-main hover:text-accent transition-colors duration-500"
+                    className="font-body text-sm text-text-main hover:text-accent transition-colors duration-200"
                   >
                     info@bsundc.com
                   </a>
@@ -181,6 +182,7 @@ export default function ContactPage() {
               viewport={{ once: true, margin: "-60px" }}
               variants={stagger}
             >
+             <div className="bg-bg-main border border-text-main/10 shadow-sm p-8 md:p-12 lg:p-16">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -212,7 +214,7 @@ export default function ContactPage() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-0">
+                <form onSubmit={handleSubmit} className="space-y-0 mt-0">
                   {/* Personal Information */}
                   <motion.div variants={fadeUp}>
                     <div className="border-b border-text-main/10 pb-2 mb-8">
@@ -433,7 +435,7 @@ export default function ContactPage() {
                           key={name}
                           type="button"
                           onClick={() => toggle(name)}
-                          className={`group relative text-left px-5 py-3.5 border transition-all duration-300 cursor-pointer ${
+                          className={`group relative text-left px-5 py-3.5 border transition-all duration-200 cursor-pointer ${
                             isActive
                               ? "bg-accent border-accent text-bg-main"
                               : "bg-bg-main border-text-main/10 text-text-main hover:border-accent/30 hover:bg-accent/[0.03]"
@@ -442,7 +444,7 @@ export default function ContactPage() {
                           <span className="flex items-center gap-3">
                             {/* Custom checkbox */}
                             <span
-                              className={`flex-shrink-0 w-4 h-4 border flex items-center justify-center transition-all duration-300 ${
+                              className={`flex-shrink-0 w-4 h-4 border flex items-center justify-center transition-all duration-200 ${
                                 isActive
                                   ? "border-bg-main/40 bg-bg-main/20"
                                   : "border-text-main/20 group-hover:border-accent/40"
@@ -500,28 +502,13 @@ export default function ContactPage() {
 
                   {/* Submit */}
                   <motion.div variants={fadeUp}>
-                    <button
-                      type="submit"
-                      className="group relative inline-flex items-center gap-4 bg-text-main text-bg-main px-10 py-4 font-body text-[11px] font-semibold uppercase tracking-[0.2em] hover:bg-accent transition-colors duration-500 cursor-pointer"
-                    >
-                      <span>Send Enquiry</span>
-                      <svg
-                        className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                        />
-                      </svg>
-                    </button>
+                    <Button type="submit" variant="primary" size="lg" withArrow className="w-full md:w-auto">
+                      Send Enquiry
+                    </Button>
                   </motion.div>
                 </form>
               )}
+             </div>
             </motion.div>
           </div>
         </div>

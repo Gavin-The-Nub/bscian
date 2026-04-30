@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
-import { Check, ChevronDown, Droplet, Wrench, ShieldCheck, Thermometer, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Check, ChevronDown, Clock, ShieldCheck, Wrench, Layers, Palette, ArrowRight, CheckCircle2, Mail } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SectionWrapper from "../components/SectionWrapper";
 import EditorialImage from "../components/EditorialImage";
 import Overline from "../components/Overline";
 import Button from "../components/Button";
-import { ttsCollections } from "./data";
 
 /* ==============================
    ANIMATION VARIANTS
@@ -26,7 +25,7 @@ const fadeUp: Variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const },
   },
 };
 
@@ -34,7 +33,7 @@ const revealImage: Variants = {
   hidden: { clipPath: "inset(100% 0% 0% 0%)" },
   show: {
     clipPath: "inset(0% 0% 0% 0%)",
-    transition: { duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] as const, delay: 0.2 },
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const, delay: 0.2 },
   },
 };
 
@@ -50,7 +49,7 @@ const FAQAccordion = ({ question, answer }: { question: string, answer: string }
         className="w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none cursor-pointer"
       >
         <span className="font-heading text-xl text-text-main pr-8">{question}</span>
-        <ChevronDown className={`w-5 h-5 text-accent transition-transform duration-300 flex-shrink-0 ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown className={`w-5 h-5 text-accent transition-transform duration-200 flex-shrink-0 ${isOpen ? "rotate-180" : ""}`} />
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -71,44 +70,30 @@ const FAQAccordion = ({ question, answer }: { question: string, answer: string }
 };
 
 export default function TapToShowerCollection() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [buyerType, setBuyerType] = useState("");
+  const [showCompany, setShowCompany] = useState(true);
 
-  const handleInquirySubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      buyerType: formData.get('buyerType'),
-      message: formData.get('message'),
-      source: 'Tap-to-Shower Page'
-    };
-
-    try {
-      // API route from TICKET-001
-      const response = await fetch('/api/inquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        console.error('Failed to submit inquiry');
-        // Fallback for visual testing since API might not be fully wired up yet
-        setIsSubmitted(true);
-      }
-    } catch (error) {
-      console.error('Error submitting inquiry:', error);
-      // Fallback
-      setIsSubmitted(true);
-    } finally {
-      setIsSubmitting(false);
+  // Parse hash params for buyer-type pre-selection (from Who It's For CTAs)
+  useEffect(() => {
+    const hash = window.location.hash;
+    const match = hash.match(/[?&]type=(\w+)/);
+    if (match) {
+      const type = match[1];
+      const typeMap: Record<string, string> = {
+        retail: "retailer",
+        developer: "developer",
+        architect: "architect",
+        consumer: "consumer",
+      };
+      const mapped = typeMap[type] || "";
+      setBuyerType(mapped);
+      setShowCompany(mapped !== "consumer");
     }
+  }, []);
+
+  const handleBuyerTypeChange = (value: string) => {
+    setBuyerType(value);
+    setShowCompany(value !== "consumer");
   };
 
   return (
@@ -122,33 +107,29 @@ export default function TapToShowerCollection() {
             initial="hidden"
             animate="show"
             variants={stagger}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
           >
-            <div className="lg:col-span-12">
-              <motion.div variants={fadeUp}>
-                <Overline withLine className="mb-8">
-                  The Shower Experience Redefined
-                </Overline>
-              </motion.div>
-              
+            <div className="lg:col-span-6">
               <motion.h1 
                 variants={fadeUp}
-                className="font-heading text-6xl md:text-8xl lg:text-9xl leading-[0.85] tracking-tight mb-12 text-text-main"
+                className="font-heading text-5xl md:text-7xl lg:text-8xl leading-[0.85] tracking-tight mb-8 text-text-main"
               >
-                Tap-to-<em className="text-accent italic">Shower</em><br />
-                Collection
+                Turn a Cold Tap{" "}
+                into a <em className="text-accent italic">Hot</em> Shower.
               </motion.h1>
-            </div>
 
-            <div className="lg:col-span-5">
               <motion.p 
                 variants={fadeUp}
-                className="font-body text-lg md:text-xl text-text-body leading-relaxed max-w-lg mb-8"
+                className="font-body text-lg md:text-xl text-text-body leading-relaxed max-w-lg mb-3"
               >
-                Our Tap-to-Shower system is engineered to transform standard cold-only 
-                installations into luxurious hot & cold shower experiences with minimal 
-                disruption. From complete bundles to individual components, each element 
-                reflects our commitment to German and Danish engineering precision.
+                Retrofit any single-line bathroom in 30 to 45 minutes — no concealed plumbing, no wall work.
+              </motion.p>
+
+              <motion.p
+                variants={fadeUp}
+                className="font-body text-sm text-text-body/60 mb-10"
+              >
+                Engineered in Germany and Denmark. Available across the Philippines.
               </motion.p>
               
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
@@ -156,16 +137,16 @@ export default function TapToShowerCollection() {
                   <Button variant="primary" className="w-full">Request Product Information</Button>
                 </a>
                 <a href="#how-it-works" className="w-full sm:w-auto">
-                  <Button variant="secondary" className="w-full border-text-main/30 ">Watch How It Works</Button>
+                  <Button variant="secondary" className="w-full">Watch How It Works</Button>
                 </a>
               </motion.div>
             </div>
 
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-6">
                <motion.div variants={revealImage} className="relative overflow-hidden w-full aspect-[16/9]">
                   <EditorialImage 
                     src="/images/shower.png" 
-                    alt="Tap-to-Shower Systems" 
+                    alt="Tap-to-Shower retrofit system installed in a bathroom" 
                     aspect="16/9"
                     priority
                     className="object-cover"
@@ -196,24 +177,25 @@ export default function TapToShowerCollection() {
           </div>
         </SectionWrapper>
 
-        {/* ===== 2. FEATURES ===== */}
+        {/* ===== 2. THE FACTS ===== */}
         <SectionWrapper id="features">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center max-w-3xl mx-auto mb-16">
-             <motion.div variants={fadeUp} className="flex justify-center mb-6"><Overline withLine>System Capabilities</Overline></motion.div>
+             <motion.div variants={fadeUp} className="flex justify-center mb-6"><Overline withLine>The Facts</Overline></motion.div>
              <motion.h2 variants={fadeUp} className="font-heading text-4xl lg:text-5xl tracking-tight text-text-main">
-                Engineered for <em className="text-accent italic">Excellence</em>
+                Built to <em className="text-accent italic">Perform</em>
              </motion.h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
-              { icon: Droplet, title: "Instant Hot Water", desc: "Seamless integration with our high-performance 3.5kW instant water heaters." },
-              { icon: Wrench, title: "Zero Tile Hacking", desc: "Surface-mounted PEX tubing means your existing bathroom walls remain untouched." },
-              { icon: Thermometer, title: "Precision Control", desc: "High-grade brass body and ceramic cartridges for exact temperature blending." }
+              { icon: Clock, title: "30–45 Min Install" },
+              { icon: ShieldCheck, title: "3-Year Tap Warranty" },
+              { icon: Layers, title: "CB IEC 60335 Certified" },
+              { icon: Wrench, title: "Single-Line PEX Retrofit" },
+              { icon: Palette, title: "Chrome · Black · Brushed SS" }
             ].map((feat, i) => (
-              <motion.div key={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="bg-bg-alt p-10 border border-text-main/5 hover:border-accent/20 transition-colors duration-300">
-                <feat.icon className="w-8 h-8 text-accent mb-6" strokeWidth={1.5} />
-                <h3 className="font-heading text-2xl text-text-main mb-4">{feat.title}</h3>
-                <p className="font-body text-text-body leading-relaxed">{feat.desc}</p>
+              <motion.div key={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="bg-bg-alt p-8 border border-text-main/5 hover:border-accent/20 transition-colors duration-200 text-center">
+                <feat.icon className="w-7 h-7 text-accent mb-4 mx-auto" strokeWidth={1.5} />
+                <h3 className="font-heading text-base text-text-main">{feat.title}</h3>
               </motion.div>
             ))}
           </div>
@@ -225,7 +207,7 @@ export default function TapToShowerCollection() {
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="lg:col-span-5">
               <motion.div variants={fadeUp}><Overline withLine dark className="mb-6">Installation</Overline></motion.div>
               <motion.h2 variants={fadeUp} className="font-heading text-4xl lg:text-5xl tracking-tight mb-6 text-bg-main">
-                Ready in <em className="text-accent italic">30–45 Minutes</em>
+                How It <em className="text-accent italic">Works</em>
               </motion.h2>
               <motion.p variants={fadeUp} className="font-body text-lg text-bg-main/70 leading-relaxed mb-10">
                 Our PEX retrofit connection set is designed for rapid, professional deployment. No concealed plumbing required.
@@ -253,40 +235,44 @@ export default function TapToShowerCollection() {
         {/* ===== 4. WHO IT'S FOR ===== */}
         <SectionWrapper id="who-its-for" className="bg-bg-feature border-y border-text-main/10">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center max-w-3xl mx-auto mb-16">
-             <motion.div variants={fadeUp} className="flex justify-center mb-6"><Overline withLine>Target Markets</Overline></motion.div>
+             <motion.div variants={fadeUp} className="flex justify-center mb-6"><Overline withLine>For You</Overline></motion.div>
              <motion.h2 variants={fadeUp} className="font-heading text-4xl lg:text-5xl tracking-tight text-text-main">
-                Built for <em className="text-accent italic">Everyone</em>
+                Who It&apos;s <em className="text-accent italic">For</em>
              </motion.h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { 
                 title: "Retailers / Distributors", 
-                desc: "Expand your portfolio with a high-margin, easy-to-stock bundle that solves a common consumer pain point.",
-                cta: "Partner With Us"
+                desc: "Stock a category that sells itself in cold-water markets.",
+                cta: "Ask About Retail Packages",
+                type: "retail"
               },
               { 
                 title: "Developers / Builders", 
-                desc: "Upgrade bathroom specifications in mass housing projects quickly without the overhead of complex plumbing overhauls.",
-                cta: "Request Bulk Pricing"
+                desc: "Standardise hot-water across single-line projects without rework.",
+                cta: "Ask About Project Solutions",
+                type: "developer"
               },
               { 
                 title: "Architects / Specifiers", 
-                desc: "Specify a sleek, functional retrofit solution that maintains design integrity while delivering cost savings.",
-                cta: "Download CAD/Specs"
+                desc: "Specify a retrofit-friendly shower system with full datasheets.",
+                cta: "Request Specification Support",
+                type: "architect"
               },
               { 
                 title: "End Consumers", 
-                desc: "Transform your daily routine. Get luxury hot and cold showers without the dust, noise, and expense of a renovation.",
-                cta: "Find a Retailer"
+                desc: "Get a hot shower without breaking your wall.",
+                cta: "Find Out Where to Buy",
+                type: "consumer"
               }
             ].map((group, i) => (
-              <motion.div key={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="bg-bg-main p-10 border border-text-main/10 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-heading text-2xl text-text-main mb-4">{group.title}</h3>
+              <motion.div key={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="bg-bg-main p-8 border border-text-main/10 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow duration-200">
+                <h3 className="font-heading text-2xl text-text-main mb-3">{group.title}</h3>
                 <p className="font-body text-text-body leading-relaxed flex-grow mb-8">{group.desc}</p>
-                <a href="#inquiry" className="mt-auto inline-flex w-fit">
+                <a href={`#inquiry?type=${group.type}`} className="mt-auto inline-flex w-fit">
                   <Button variant="link" className="group/btn !p-0 !h-auto flex items-center gap-2 text-accent">
-                    {group.cta} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    {group.cta} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </Button>
                 </a>
               </motion.div>
@@ -310,7 +296,7 @@ export default function TapToShowerCollection() {
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="lg:col-span-6">
               <motion.div variants={fadeUp}><Overline withLine className="mb-6">Trust Signals</Overline></motion.div>
               <motion.h2 variants={fadeUp} className="font-heading text-4xl tracking-tight mb-10 text-text-main">
-                Why Choose Our System?
+                Why This <em className="text-accent italic">System</em>
               </motion.h2>
               <div className="space-y-8">
                  {[
@@ -321,7 +307,7 @@ export default function TapToShowerCollection() {
                    <motion.div key={i} variants={fadeUp} className="flex gap-5">
                       <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-body font-bold text-text-main text-lg mb-2">{signal.title}</h4>
+                        <h4 className="font-body font-medium text-text-main text-lg mb-2">{signal.title}</h4>
                         <p className="font-body text-text-body leading-relaxed">{signal.desc}</p>
                       </div>
                    </motion.div>
@@ -331,17 +317,22 @@ export default function TapToShowerCollection() {
           </div>
         </SectionWrapper>
 
-        {/* ===== 6. MEDIA GALLERY ===== */}
-        <SectionWrapper id="media-gallery" className="bg-bg-main pb-0" pt="pt-0" noPadding>
+        {/* ===== 6. INSTALL SEQUENCE GALLERY (inside How It Works arc) ===== */}
+        <SectionWrapper id="install-gallery" className="bg-bg-main pb-0" pt="pt-0" noPadding>
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-1 md:gap-2">
-              {[1, 2, 3, 4].map((i) => (
+              {[
+                { src: "/images/shower.png", alt: "Step 1 — Cold-only starting state before retrofit" },
+                { src: "/images/carousel/fittings.png", alt: "Step 2 — Tap and heater installation in progress" },
+                { src: "/images/carousel/shower-product.png", alt: "Step 3 — Finished retrofit, all components mounted" },
+                { src: "/images/hero.png", alt: "Step 4 — Running hot shower after conversion" }
+              ].map((img, i) => (
                 <motion.div key={i} variants={fadeUp} className="aspect-square bg-bg-alt relative overflow-hidden group">
                   <EditorialImage 
-                    src={i % 2 === 0 ? "/images/carousel/shower-product.png" : "/images/shower.png"} 
-                    alt="Gallery Image" 
+                    src={img.src} 
+                    alt={img.alt} 
                     aspect="1/1" 
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" 
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-600" 
                   />
                 </motion.div>
               ))}
@@ -371,85 +362,10 @@ export default function TapToShowerCollection() {
           </motion.div>
         </SectionWrapper>
 
-        {/* ===== COLLECTIONS GRID ===== */}
-        <section className="border-t border-text-main/10 bg-bg-main/30 backdrop-blur-sm">
-          <SectionWrapper id="collections-list" pt="pt-24 lg:pt-36" pb="pb-24 lg:pb-36">
-            <div className="space-y-32 lg:space-y-48">
-              {ttsCollections.map((collection, index) => (
-                <div 
-                  key={collection.id}
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center ${
-                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Content */}
-                  <motion.div 
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, margin: "-100px" }}
-                    variants={stagger}
-                    className={`lg:col-span-5 ${index % 2 === 1 ? "lg:order-2" : "lg:order-1"}`}
-                  >
-                    <motion.div variants={fadeUp}>
-                      <Overline withLine className="mb-6">
-                        Collection {collection.code}
-                      </Overline>
-                    </motion.div>
-
-                    <motion.h2 
-                      variants={fadeUp}
-                      className="font-heading text-4xl md:text-5xl lg:text-6xl tracking-tight mb-8 text-text-main"
-                    >
-                      {collection.name}
-                    </motion.h2>
-
-                    <motion.p 
-                      variants={fadeUp}
-                      className="font-body text-base md:text-lg text-text-body leading-relaxed mb-10"
-                    >
-                      {collection.description}
-                    </motion.p>
-
-                    <motion.div variants={fadeUp}>
-                      <a href={collection.detailsPath}>
-                        <Button variant="primary" className="group">
-                          {collection.ctaText}
-                          <span className="inline-block ml-3 group-hover:translate-x-1 transition-transform">→</span>
-                        </Button>
-                      </a>
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Image */}
-                  <motion.div 
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, margin: "-100px" }}
-                    variants={revealImage}
-                    className={`lg:col-span-7 ${index % 2 === 1 ? "lg:order-1" : "lg:order-2"}`}
-                  >
-                    <EditorialImage 
-                      src={collection.image} 
-                      alt={collection.name} 
-                      aspect="1/1"
-                      className="shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
-                    />
-                  </motion.div>
-                </div>
-              ))}
-            </div>
-          </SectionWrapper>
-        </section>
-
-        {/* ===== 8. LEAD CAPTURE FORM ===== */}
-        <section id="inquiry" className="bg-text-main relative overflow-hidden">
-             <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none">
-                <span className="font-heading text-[20vw] text-bg-main whitespace-nowrap">
-                   INQUIRY
-                </span>
-             </div>
+        {/* ===== 7. LEAD CAPTURE FORM ===== */}
+        <section id="inquiry" className="bg-bg-alt border-t border-text-main/10">
              <SectionWrapper pt="pt-24 lg:pt-32" pb="pb-24 lg:pb-32">
-                <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+                <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
                   <motion.div
                     initial="hidden"
                     whileInView="show"
@@ -458,13 +374,13 @@ export default function TapToShowerCollection() {
                     className="lg:col-span-5"
                   >
                     <motion.div variants={fadeUp}>
-                      <Overline withLine dark className="mb-6">Partner With Us</Overline>
+                      <Overline withLine className="mb-6">Get In Touch</Overline>
                     </motion.div>
                     <motion.h2 variants={fadeUp} className="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main tracking-tight mb-8">
-                       Request Product <br/><em className="text-accent italic">Information</em>
+                       Submit an <br/><em className="text-accent italic">Enquiry</em>
                     </motion.h2>
                     <motion.p variants={fadeUp} className="font-body text-text-body text-lg mb-10 leading-relaxed">
-                       Whether you're a retailer, developer, architect, or homeowner, our specialists are ready to provide specifications, pricing, and consultation.
+                       Whether you&apos;re a retailer, developer, architect, or homeowner, our specialists are ready to provide specifications, pricing, and consultation.
                     </motion.p>
                     <motion.div variants={fadeUp} className="space-y-6">
                        <div className="flex items-center gap-4 text-text-body">
@@ -473,7 +389,7 @@ export default function TapToShowerCollection() {
                        </div>
                        <div className="flex items-center gap-4 text-text-body">
                           <Check className="w-5 h-5 text-accent" />
-                          <span className="font-body text-sm uppercase tracking-widest">Bulk Pricing & Project Rates</span>
+                          <span className="font-body text-sm uppercase tracking-widest">Bulk Pricing &amp; Project Rates</span>
                        </div>
                        <div className="flex items-center gap-4 text-text-body">
                           <Check className="w-5 h-5 text-accent" />
@@ -487,45 +403,61 @@ export default function TapToShowerCollection() {
                     whileInView="show"
                     viewport={{ once: true }}
                     variants={fadeUp}
-                    className="lg:col-span-7 bg-bg-main p-8 md:p-12 shadow-2xl"
+                    className="lg:col-span-7"
                   >
-                    {isSubmitted ? (
-                      <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-20">
-                        <CheckCircle2 className="w-20 h-20 text-accent mb-6" strokeWidth={1.5} />
-                        <h3 className="font-heading text-4xl text-text-main">Thank You</h3>
-                        <p className="font-body text-lg text-text-body max-w-sm">Your inquiry has been successfully received. A specialist will contact you shortly.</p>
-                      </div>
-                    ) : (
-                      <form onSubmit={handleInquirySubmit} className="space-y-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                          <div>
-                            <label htmlFor="name" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Full Name</label>
-                            <input type="text" id="name" name="name" required className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all" placeholder="Your name" />
-                          </div>
-                          <div>
-                            <label htmlFor="email" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Email Address</label>
-                            <input type="email" id="email" name="email" required className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all" placeholder="your@email.com" />
-                          </div>
-                        </div>
+                    <div className="bg-bg-main border border-text-main/10 shadow-sm p-8 md:p-12 lg:p-16">
+                      <div className="space-y-8">
                         <div>
-                          <label htmlFor="buyerType" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">I am a...</label>
-                          <select id="buyerType" name="buyerType" required className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all appearance-none cursor-pointer">
+                          <label htmlFor="buyerType" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Enquiry Type</label>
+                          <select 
+                            id="buyerType" 
+                            name="buyerType" 
+                            value={buyerType}
+                            onChange={(e) => handleBuyerTypeChange(e.target.value)}
+                            disabled
+                            className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all appearance-none disabled:opacity-60 disabled:cursor-not-allowed"
+                          >
                             <option value="">Select an option</option>
                             <option value="retailer">Retailer / Distributor</option>
                             <option value="developer">Developer / Builder</option>
                             <option value="architect">Architect / Specifier</option>
                             <option value="consumer">End Consumer</option>
+                            <option value="general">General Enquiry</option>
                           </select>
                         </div>
-                        <div>
-                          <label htmlFor="message" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Message</label>
-                          <textarea id="message" name="message" rows={5} className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all resize-y" placeholder="Tell us about your project requirements..."></textarea>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                          <div>
+                            <label htmlFor="inquiry-name" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Full Name</label>
+                            <input type="text" id="inquiry-name" name="name" disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all disabled:opacity-60 disabled:cursor-not-allowed" placeholder="Your name" />
+                          </div>
+                          <div>
+                            <label htmlFor="inquiry-email" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Email Address</label>
+                            <input type="email" id="inquiry-email" name="email" disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all disabled:opacity-60 disabled:cursor-not-allowed" placeholder="your@email.com" />
+                          </div>
                         </div>
-                        <Button type="submit" variant="primary" size="lg" className="w-full text-sm" disabled={isSubmitting}>
-                          {isSubmitting ? "Sending..." : "Submit Inquiry"}
-                        </Button>
-                      </form>
-                    )}
+                        {showCompany && (
+                          <div>
+                            <label htmlFor="inquiry-company" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Company <span className="text-text-body/50 normal-case tracking-normal">(optional)</span></label>
+                            <input type="text" id="inquiry-company" name="company" disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all disabled:opacity-60 disabled:cursor-not-allowed" placeholder="Company name" />
+                          </div>
+                        )}
+                        <div>
+                          <label htmlFor="inquiry-message" className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-3">Message</label>
+                          <textarea id="inquiry-message" name="message" rows={5} disabled className="w-full bg-bg-alt border border-text-main/10 px-5 py-4 font-body text-sm text-text-main transition-all resize-y disabled:opacity-60 disabled:cursor-not-allowed" placeholder="Tell us about your project requirements..."></textarea>
+                        </div>
+                        <div className="bg-bg-alt border border-text-main/10 p-6 text-center">
+                          <p className="font-body text-sm text-text-body mb-4">
+                            Online enquiries available shortly. In the meantime, contact us directly:
+                          </p>
+                          <a href="mailto:info@bsundc.com?subject=Tap-to-Shower Enquiry" className="inline-flex">
+                            <Button variant="primary" size="lg" className="w-full sm:w-auto">
+                              <Mail className="w-4 h-4 mr-3" />
+                              Email info@bsundc.com
+                            </Button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </motion.div>
                 </div>
              </SectionWrapper>

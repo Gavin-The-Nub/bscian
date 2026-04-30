@@ -25,6 +25,11 @@
   --font-sans: "Calibri", "Segoe UI", Candara, Segoe, Optima, Arial, sans-serif;
   --font-heading: var(--font-sans);
   --font-body: var(--font-sans);
+
+  /* Motion tokens — two durations only */
+  --duration-state: 200ms;   /* hover, focus, color changes */
+  --duration-reveal: 600ms;  /* scroll-in, entrance animations */
+  --ease-default: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 

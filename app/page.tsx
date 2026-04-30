@@ -27,7 +27,7 @@ const fadeUp = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const },
   },
 };
 
@@ -60,7 +60,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.9,
+                  duration: 0.6,
                   delay: 0.4,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
@@ -110,7 +110,7 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.97 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
-                  duration: 1.2,
+                  duration: 0.6,
                   delay: 0.2,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
@@ -141,7 +141,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.9 }}
+            transition={{ duration: 0.6 }}
           >
             <EditorialImage
               src="/images/shower.png"
@@ -191,7 +191,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.9,
+                  duration: 0.6,
                   delay: 0.4,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
@@ -207,7 +207,7 @@ export default function Home() {
                     </Button>
                   </a>
                   <a href="/tap-to-shower#inquiry" className="w-full sm:w-auto">
-                    <Button variant="secondary" size="lg" className="w-full sm:w-auto text-text-white border-text-white" >
+                    <Button variant="secondary" size="lg" onDark className="w-full sm:w-auto">
                       Request Information
                     </Button>
                   </a>
@@ -227,7 +227,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{
-                  duration: 0.9,
+                  duration: 0.6,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
               >
@@ -364,7 +364,7 @@ export default function Home() {
       {/* Redundant Shower section removed */}
 
       {/* ===== TRUST / PROOF (Stats) ===== */}
-      <section className="bg-bg-alt border-t border-b border-text-main/10 px-6 md:px-16 py-16 md:py-24">
+      <section className="bg-bg-alt border-t border-b border-text-main/10 px-6 md:px-16 py-20 md:py-32">
         <div className="mx-auto max-w-[1600px]">
           <motion.div
             className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
@@ -383,7 +383,7 @@ export default function Home() {
                     : ""
                 }`}
               >
-                <span className="block font-heading text-4xl md:text-5xl lg:text-6xl text-text-main tracking-tight leading-none mb-3">
+                <span className="block font-heading text-5xl md:text-6xl lg:text-7xl text-text-main tracking-tight leading-none mb-3">
                   {stat.number}
                 </span>
                 <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.25em] text-text-body">
