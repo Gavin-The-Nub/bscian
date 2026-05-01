@@ -81,8 +81,9 @@ export default function Home() {
                 </h1>
 
                 <p className="font-body text-base md:text-lg text-text-body leading-relaxed max-w-md mb-10 mx-auto lg:mx-0">
+                  {/* [CJ] — "& Denmark" → "and Denmark": ampersand banned in body copy per house style. */}
                   Premium faucets, fixtures, and sanitary products — developed
-                  in Germany & Denmark, trusted across Southeast Asia.
+                  in Germany and Denmark, trusted across Southeast Asia.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">

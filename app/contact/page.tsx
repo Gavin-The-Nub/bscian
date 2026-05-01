@@ -397,11 +397,12 @@ export default function ContactPage() {
                     </motion.div>
 
                     <motion.div variants={fadeUp}>
+                      {/* [CJ] — "E-Mail" → "Email Address" per form label standard. */}
                       <label
                         htmlFor="email"
                         className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-2"
                       >
-                        E-Mail
+                        Email Address
                       </label>
                       <input
                         type="email"
@@ -484,11 +485,12 @@ export default function ContactPage() {
                   </motion.div>
 
                   <motion.div variants={fadeUp} className="mb-12">
+                    {/* [CJ] — "Write a Message" → "Message" per form label standard. */}
                     <label
                       htmlFor="message"
                       className="block font-body text-xs font-medium uppercase tracking-[0.15em] text-text-main mb-2"
                     >
-                      Write a Message
+                      Message
                     </label>
                     <textarea
                       id="message"

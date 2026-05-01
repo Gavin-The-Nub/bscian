@@ -73,12 +73,13 @@ export default function TapToShowerCollection() {
   const [buyerType, setBuyerType] = useState("");
   const [showCompany, setShowCompany] = useState(true);
 
-  // Parse hash params for buyer-type pre-selection (from Who It's For CTAs)
+  // [CJ] — Fixed: was reading window.location.hash which broke type pre-selection
+  //        on in-page navigation. Now reads search params (?type=retail) so direct
+  //        URL loads (e.g. shared links) still pre-select the correct buyer type.
   useEffect(() => {
-    const hash = window.location.hash;
-    const match = hash.match(/[?&]type=(\w+)/);
-    if (match) {
-      const type = match[1];
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+    if (type) {
       const typeMap: Record<string, string> = {
         retail: "retailer",
         developer: "developer",
@@ -94,6 +95,20 @@ export default function TapToShowerCollection() {
   const handleBuyerTypeChange = (value: string) => {
     setBuyerType(value);
     setShowCompany(value !== "consumer");
+  };
+
+  // [CJ] — Fixed: Who It's For CTAs were linking to #inquiry?type=retail which
+  //        matched no element ID (form ID is "inquiry"), so clicking did nothing.
+  //        This handler sets buyer type state directly and smooth-scrolls to the form.
+  const scrollToInquiry = (type: string) => {
+    const typeMap: Record<string, string> = {
+      retail: "retailer",
+      developer: "developer",
+      architect: "architect",
+    };
+    setBuyerType(typeMap[type] || "");
+    setShowCompany(true);
+    document.getElementById("inquiry")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -136,8 +151,10 @@ export default function TapToShowerCollection() {
                 <a href="#inquiry" className="w-full sm:w-auto">
                   <Button variant="primary" className="w-full">Request Product Information</Button>
                 </a>
+                {/* [CJ] — Changed from "Watch How It Works": no video exists at destination,
+                     label was a broken promise. "How It Works" matches the section accurately. */}
                 <a href="#how-it-works" className="w-full sm:w-auto">
-                  <Button variant="secondary" className="w-full">Watch How It Works</Button>
+                  <Button variant="secondary" className="w-full">How It Works</Button>
                 </a>
               </motion.div>
             </div>
@@ -167,8 +184,10 @@ export default function TapToShowerCollection() {
               <motion.p variants={fadeUp} className="font-body text-lg text-text-body leading-relaxed mb-6">
                 Most Philippine bathrooms have a single cold-water line. Upgrading to a hot and cold shower has traditionally meant breaking tiles, rerouting pipes, and weeks of renovation.
               </motion.p>
+              {/* [CJ] — ™ dropped on second mention per house style:
+                   ™ on first mention per section only (first mention is the H2 above). */}
               <motion.p variants={fadeUp} className="font-body text-lg text-text-body leading-relaxed">
-                Tap-to-Shower™ is a retrofit system. An external PEX line and a specialised connection kit convert a single cold-water line into a thermostatic-ready hot and cold shower without concealing new plumbing behind walls.
+                Tap-to-Shower is a retrofit system. An external PEX line and a specialised connection kit convert a single cold-water line into a thermostatic-ready hot and cold shower without concealing new plumbing behind walls.
               </motion.p>
             </motion.div>
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={revealImage} className="relative aspect-square">
@@ -270,7 +289,14 @@ export default function TapToShowerCollection() {
               <motion.div key={i} initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="bg-bg-main p-8 border border-text-main/10 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow duration-200">
                 <h3 className="font-heading text-2xl text-text-main mb-3">{group.title}</h3>
                 <p className="font-body text-text-body leading-relaxed flex-grow mb-8">{group.desc}</p>
-                <a href={group.type === "consumer" ? "/where-to-buy" : `#inquiry?type=${group.type}`} className="mt-auto inline-flex w-fit">
+                {/* [CJ] — Consumer goes to /where-to-buy (COPY-001 path a).
+                     B2B types use scrollToInquiry() — sets buyer type + smooth scrolls.
+                     href="#inquiry" kept as fallback if JS is disabled. */}
+                <a
+                  href={group.type === "consumer" ? "/where-to-buy" : "#inquiry"}
+                  onClick={group.type !== "consumer" ? (e) => { e.preventDefault(); scrollToInquiry(group.type); } : undefined}
+                  className="mt-auto inline-flex w-fit"
+                >
                   <Button variant="link" className="group/btn !p-0 !h-auto flex items-center gap-2 text-accent">
                     {group.cta} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </Button>
@@ -321,11 +347,14 @@ export default function TapToShowerCollection() {
         <SectionWrapper id="install-gallery" className="bg-bg-main pb-0" pt="pt-0" noPadding>
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-1 md:gap-2">
+              {/* [CJ] — Alt text rewritten to describe actual image content.
+                   Previous alt text fabricated a step-by-step install sequence
+                   that didn't match the images (generic product/lifestyle shots). */}
               {[
-                { src: "/images/shower.png", alt: "Step 1 — Cold-only starting state before retrofit" },
-                { src: "/images/carousel/fittings.png", alt: "Step 2 — Tap and heater installation in progress" },
-                { src: "/images/carousel/shower-product.png", alt: "Step 3 — Finished retrofit, all components mounted" },
-                { src: "/images/hero.png", alt: "Step 4 — Running hot shower after conversion" }
+                { src: "/images/shower.png", alt: "Tap-to-Shower system in a finished bathroom" },
+                { src: "/images/carousel/fittings.png", alt: "Tap-to-Shower PEX fittings and connection components" },
+                { src: "/images/carousel/shower-product.png", alt: "Tap-to-Shower tap and column assembly" },
+                { src: "/images/hero.png", alt: "Tap-to-Shower installed and operational" }
               ].map((img, i) => (
                 <motion.div key={i} variants={fadeUp} className="aspect-square bg-bg-alt relative overflow-hidden group">
                   <EditorialImage 
@@ -353,7 +382,10 @@ export default function TapToShowerCollection() {
               {[
                 { q: "Is the PEX tube durable enough for hot water?", a: "Yes. The PEX tubing is rated for high-temperature and high-pressure applications and handles the output of the 3.5-kilowatt heater." },
                 { q: "Do I need a professional plumber?", a: "The system is designed for professional installation. A certified plumber or electrician is required to validate the warranty." },
-                { q: "Can I use my existing water heater?", a: "Tap-to-Shower\u2122 is optimised for the BSC instant water heater range. Compatibility with other systems depends on connection type and pressure rating \u2014 contact us for confirmation before purchase." },
+                // [CJ] \u2014 COPY-005 Q3: removed "contact us" pronoun violation.
+                //        "us" is first-person in a narrative FAQ section \u2014 not permitted.
+                //        Replaced with direct email address. Also removes the second em-dash on the page.
+                { q: "Can I use my existing water heater?", a: "Tap-to-Shower\u2122 is optimised for the BSC instant water heater range. Compatibility with other systems depends on connection type and pressure rating \u2014 contact info@bsundc.com for confirmation before purchase." },
                 { q: "What finishes are available?", a: "Tap bodies are available in Chrome, Matt Black, and Brushed Stainless Steel." }
               ].map((faq, i) => (
                 <FAQAccordion key={i} question={faq.q} answer={faq.a} />
