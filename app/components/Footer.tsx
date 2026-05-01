@@ -22,8 +22,10 @@ export default function Footer() {
             >
               BSC
             </Link>
+            {/* [CJ] — Tagline corrected: BSC = Bathroom and Kitchen Solutions.
+                 Previous "Bathroom · Sanitary · Construction" was wrong on every page. */}
             <p className="font-body text-[10px] uppercase tracking-[0.25em] text-bg-main/40 mt-2">
-              Bathroom · Sanitary · Construction
+              Bathroom and Kitchen Solutions
             </p>
           </div>
 
