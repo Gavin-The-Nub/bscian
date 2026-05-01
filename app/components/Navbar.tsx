@@ -26,6 +26,7 @@ const navLinks = [
     label: "Tap-to-Shower", 
     href: "/tap-to-shower",
     items: [
+      { label: "Overview", href: "/tap-to-shower" },
       { label: "Complete Kit", href: "/tap-to-shower/complete-kit" },
       { label: "Tap Only", href: "/tap-to-shower/tap-only" },
       { label: "Upgrade Kit", href: "/tap-to-shower/upgrade-kit" },
@@ -81,15 +82,21 @@ export default function Navbar() {
               onMouseEnter={() => link.items && setActiveDropdown(link.label)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <a
-                href={link.href}
-                className="flex items-center gap-1.5 font-body text-[11px] font-medium uppercase tracking-[0.2em] text-text-main hover:text-accent transition-colors duration-500"
-              >
-                {link.label}
-                {link.items && (
+              {link.items ? (
+                <span
+                  className="flex items-center gap-1.5 font-body text-[11px] font-medium uppercase tracking-[0.2em] text-text-main hover:text-accent transition-colors duration-500 cursor-default select-none"
+                >
+                  {link.label}
                   <ChevronDown className={`w-3 h-3 transition-transform duration-500 ${activeDropdown === link.label ? "rotate-180" : ""}`} />
-                )}
-              </a>
+                </span>
+              ) : (
+                <a
+                  href={link.href}
+                  className="flex items-center gap-1.5 font-body text-[11px] font-medium uppercase tracking-[0.2em] text-text-main hover:text-accent transition-colors duration-500"
+                >
+                  {link.label}
+                </a>
+              )}
 
               {/* Dropdown Menu */}
               <AnimatePresence>
@@ -153,21 +160,22 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <div key={link.label} className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
-                <a
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-text-main transition-colors duration-500"
-                >
-                  {link.label}
-                </a>
-                {link.items && (
-                  <button 
+                {link.items ? (
+                  <button
                     onClick={() => setMobileExpanded(mobileExpanded === link.label ? null : link.label)}
-                    className="p-2 -mr-2"
-                    aria-label="Toggle sub-menu"
+                    className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-text-main transition-colors duration-500 flex items-center gap-2"
                   >
+                    {link.label}
                     <ChevronDown className={`w-4 h-4 text-text-main/40 transition-transform duration-500 ${mobileExpanded === link.label ? "rotate-180" : ""}`} />
                   </button>
+                ) : (
+                  <a
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-text-main transition-colors duration-500"
+                  >
+                    {link.label}
+                  </a>
                 )}
               </div>
 

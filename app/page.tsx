@@ -133,7 +133,7 @@ export default function Home() {
                 }}
                 className="flex flex-col items-center text-center lg:items-start lg:text-left">
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
-                  <a href="/contact" className="w-full sm:w-auto">
+                  <a href="/tap-to-shower" className="w-full sm:w-auto">
                     <Button
                       variant="primary"
                       size="lg"
@@ -142,7 +142,7 @@ export default function Home() {
                       Discover Tap-to-Shower™
                     </Button>
                   </a>
-                  <a href="/contact" className="w-full sm:w-auto">
+                  <a href="/tap-to-shower#inquiry" className="w-full sm:w-auto">
                     <Button variant="secondary" size="lg" onDark className="w-full sm:w-auto">
                       Request Information
                     </Button>
@@ -229,7 +229,7 @@ export default function Home() {
 
                 <motion.div variants={fadeUp}>
                   <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
-                  <Link href="/contact" className="w-full sm:w-auto">
+                  <Link href="/tap-to-shower" className="w-full sm:w-auto">
                     <Button
                       variant="primary"
                       size="lg"
@@ -238,7 +238,7 @@ export default function Home() {
                       Discover Tap-to-Shower™
                     </Button>
                   </Link>
-                  <Link href="/contact" className="w-full sm:w-auto">
+                  <Link href="/tap-to-shower#inquiry" className="w-full sm:w-auto">
                     <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                       Request Information
                     </Button>
@@ -348,7 +348,7 @@ export default function Home() {
               {/* RETAILER — largest, dense. Carries the stockable trio inline. */}
               <motion.div variants={fadeUp}>
                 <Link
-                  href="/contact"
+                  href="/tap-to-shower?type=retail#inquiry"
                   className="group block bg-bg-main border-2 border-accent/40 hover:border-accent p-6 md:p-8 transition-colors duration-200"
                 >
                   <div className="flex items-baseline justify-between mb-3 gap-4">
@@ -396,7 +396,7 @@ export default function Home() {
               {/* DEVELOPER — medium. Single descriptive line + placeholder asset CTA. */}
               <motion.div variants={fadeUp}>
                 <Link
-                  href="/contact"
+                  href="/tap-to-shower?type=developer#inquiry"
                   className="group block bg-bg-main border border-text-main/15 hover:border-accent/50 p-5 md:p-6 transition-colors duration-200"
                 >
                   <div className="flex items-baseline justify-between mb-2 gap-4">
@@ -427,7 +427,7 @@ export default function Home() {
               {/* ARCHITECT — slim. Datasheet-anchored copy. */}
               <motion.div variants={fadeUp}>
                 <Link
-                  href="/contact"
+                  href="/tap-to-shower?type=architect#inquiry"
                   className="group block bg-bg-main border border-text-main/15 hover:border-accent/50 p-4 md:p-5 transition-colors duration-200"
                 >
                   <div className="flex items-baseline justify-between mb-2 gap-4">
