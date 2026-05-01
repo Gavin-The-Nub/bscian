@@ -36,7 +36,7 @@ export const sections: Section[] = [
       {
         name: "Washbasin Mixer Faucet (Reach 113mm)",
         desc: DA,
-        image: "/images/collection/s2/S2-1101-CR-1920w.png",
+        image: "/images/collection/S2/S2-1101-CR-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Deck mounted",
