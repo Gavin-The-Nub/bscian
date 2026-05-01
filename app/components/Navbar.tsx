@@ -22,8 +22,8 @@ const navLinks = [
       { label: "Fittings Collection", href: "/collections/fittings" },
     ],
   },
-  { 
-    label: "Tap-to-Shower", 
+  {
+    label: "Tap-to-Shower",
     href: "/tap-to-shower",
     items: [
       { label: "Overview", href: "/tap-to-shower" },
@@ -32,7 +32,7 @@ const navLinks = [
       { label: "Upgrade Kit", href: "/tap-to-shower/upgrade-kit" },
       { label: "Connection Set", href: "/tap-to-shower/connection-set" },
       { label: "Instant Water Heater", href: "/tap-to-shower/instant-heater" },
-    ]
+    ],
   },
   {
     label: "About",
@@ -67,27 +67,30 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-[1600px] flex items-center justify-between px-6 md:px-16 h-16 md:h-20">
+      <div className="mx-auto max-w-400 flex items-center justify-between px-6 md:px-16 h-16 md:h-20">
         {/* Logo */}
-        <a href="/" className="font-heading text-2xl md:text-3xl tracking-tight text-text-main italic">
+        <a
+          href="/"
+          className="font-heading text-2xl md:text-3xl tracking-tight text-text-main italic"
+        >
           BSC
         </a>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
-            <div 
+            <div
               key={link.label}
               className="relative py-4"
               onMouseEnter={() => link.items && setActiveDropdown(link.label)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               {link.items ? (
-                <span
-                  className="flex items-center gap-1.5 font-body text-[11px] font-medium uppercase tracking-[0.2em] text-text-main hover:text-accent transition-colors duration-500 cursor-default select-none"
-                >
+                <span className="flex items-center gap-1.5 font-body text-[11px] font-medium uppercase tracking-[0.2em] text-text-main hover:text-accent transition-colors duration-500 cursor-default select-none">
                   {link.label}
-                  <ChevronDown className={`w-3 h-3 transition-transform duration-500 ${activeDropdown === link.label ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`w-3 h-3 transition-transform duration-500 ${activeDropdown === link.label ? "rotate-180" : ""}`}
+                  />
                 </span>
               ) : (
                 <a
@@ -162,11 +165,17 @@ export default function Navbar() {
               <div className="flex items-center justify-between">
                 {link.items ? (
                   <button
-                    onClick={() => setMobileExpanded(mobileExpanded === link.label ? null : link.label)}
+                    onClick={() =>
+                      setMobileExpanded(
+                        mobileExpanded === link.label ? null : link.label,
+                      )
+                    }
                     className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-text-main transition-colors duration-500 flex items-center gap-2"
                   >
                     {link.label}
-                    <ChevronDown className={`w-4 h-4 text-text-main/40 transition-transform duration-500 ${mobileExpanded === link.label ? "rotate-180" : ""}`} />
+                    <ChevronDown
+                      className={`w-4 h-4 text-text-main/40 transition-transform duration-500 ${mobileExpanded === link.label ? "rotate-180" : ""}`}
+                    />
                   </button>
                 ) : (
                   <a
@@ -186,7 +195,7 @@ export default function Navbar() {
                   animate={{
                     height: mobileExpanded === link.label ? "auto" : 0,
                     opacity: mobileExpanded === link.label ? 1 : 0,
-                    marginBottom: mobileExpanded === link.label ? 8 : 0
+                    marginBottom: mobileExpanded === link.label ? 8 : 0,
                   }}
                   className="overflow-hidden flex flex-col gap-3 pl-4 border-l border-text-main/5"
                 >

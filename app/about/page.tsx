@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import SectionWrapper from "../components/SectionWrapper";
 import Overline from "../components/Overline";
 import Footer from "../components/Footer";
+import { Leaf, Zap, Sparkles } from "lucide-react";
 
 /* ==============================
    ANIMATION VARIANTS
@@ -27,18 +28,10 @@ const fadeUp = {
   },
 };
 
-
-
-
 /* ==============================
    DATA
    ============================== */
-const brands = [
-  "Hansgrohe",
-  "Grohe",
-  "Neoperl",
-  "Kohler",
-];
+const brands = ["Hansgrohe", "Grohe", "Neoperl", "Kohler"];
 
 const markets = [
   { country: "Philippines", code: "PH" },
@@ -60,12 +53,12 @@ export default function AboutPage() {
       <section className="relative flex items-end bg-bg-main overflow-hidden min-h-[60vh] lg:min-h-[70vh]">
         {/* Decorative large text background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-          <span className="font-heading text-[20vw] lg:text-[16vw] font-bold tracking-tighter text-text-main/[0.03] leading-none">
+          <span className="font-heading text-[20vw] lg:text-[16vw] font-bold tracking-tighter text-text-main/3 leading-none">
             BSC
           </span>
         </div>
 
-        <div className="mx-auto max-w-[1600px] w-full px-6 md:px-16 pb-16 md:pb-24 pt-32 lg:pt-40">
+        <div className="mx-auto max-w-400 w-full px-6 md:px-16 pb-16 md:pb-24 pt-32 lg:pt-40">
           <motion.div
             initial="hidden"
             animate="show"
@@ -82,11 +75,9 @@ export default function AboutPage() {
               variants={fadeUp}
               className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight mb-8 text-text-main"
             >
-              European{" "}
-              <em className="text-accent not-italic">Expertise</em>,
+              European <em className="text-accent not-italic">Expertise</em>,
               <br />
-              Global{" "}
-              <em className="text-accent not-italic italic">Reach</em>
+              Global <em className="text-accent italic">Reach</em>
             </motion.h1>
 
             <motion.p
@@ -126,8 +117,7 @@ export default function AboutPage() {
               variants={fadeUp}
               className="font-heading text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight text-text-main"
             >
-              About{" "}
-              <em className="text-accent italic">BSC</em>
+              About <em className="text-accent italic">BSC</em>
             </motion.h2>
           </motion.div>
 
@@ -174,7 +164,7 @@ export default function AboutPage() {
 
       {/* ===== MARKETS (Visual strip) ===== */}
       <section className="bg-bg-alt border-t border-b border-text-main/10 px-6 md:px-16 py-12 md:py-16">
-        <div className="mx-auto max-w-[1600px]">
+        <div className="mx-auto max-w-400">
           <motion.div
             className="flex flex-wrap items-center justify-center gap-8 md:gap-16"
             initial="hidden"
@@ -188,7 +178,9 @@ export default function AboutPage() {
                 variants={fadeUp}
                 className="flex flex-col items-center gap-2"
               >
-                <span className="font-heading text-2xl md:text-3xl tracking-tight text-text-main font-bold">{m.code}</span>
+                <span className="font-heading text-2xl md:text-3xl tracking-tight text-text-main font-bold">
+                  {m.code}
+                </span>
                 <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.25em] text-text-body">
                   {m.country}
                 </span>
@@ -209,7 +201,7 @@ export default function AboutPage() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <div className="relative aspect-[4/5] bg-bg-feature overflow-hidden">
+            <div className="relative aspect-4/5 bg-bg-feature overflow-hidden">
               {/* Decorative geometric pattern */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-full h-full">
@@ -272,8 +264,7 @@ export default function AboutPage() {
             >
               Identification of
               <br />
-              Tomorrow&apos;s{" "}
-              <em className="text-accent italic">Trend</em>
+              Tomorrow&apos;s <em className="text-accent italic">Trend</em>
             </motion.h2>
 
             <motion.p
@@ -282,9 +273,10 @@ export default function AboutPage() {
             >
               At BSC, our mission is to lead the water tap industry with
               innovative, high-quality solutions that meet the needs of
-              today&apos;s world. We are committed to sustainability, efficiency,
-              and exceptional design, ensuring that our products, like the DUET,
-              deliver both superior performance and reduced environmental impact.
+              today&apos;s world. We are committed to sustainability,
+              efficiency, and exceptional design, ensuring that our products,
+              like the DUET, deliver both superior performance and reduced
+              environmental impact.
             </motion.p>
 
             <motion.p
@@ -302,12 +294,15 @@ export default function AboutPage() {
               className="grid grid-cols-3 gap-6 pt-8 border-t border-text-main/10"
             >
               {[
-                { label: "Sustainability", icon: "♻" },
-                { label: "Efficiency", icon: "⚡" },
-                { label: "Design", icon: "✦" },
+                { label: "Sustainability", icon: Leaf },
+                { label: "Efficiency", icon: Zap },
+                { label: "Design", icon: Sparkles },
               ].map((pillar) => (
-                <div key={pillar.label} className="text-center">
-                  <span className="block text-2xl mb-2">{pillar.icon}</span>
+                <div
+                  key={pillar.label}
+                  className="text-center flex flex-col items-center gap-2"
+                >
+                  <pillar.icon className="text-2xl" />
                   <span className="font-body text-[10px] md:text-xs uppercase tracking-[0.25em] text-text-body">
                     {pillar.label}
                   </span>
@@ -320,7 +315,7 @@ export default function AboutPage() {
 
       {/* ===== COMPANY INFORMATION / FOUNDER ===== */}
       <section className="bg-bg-main border-b border-text-main/10">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-16 py-20 md:py-32">
+        <div className="mx-auto max-w-400 px-6 md:px-16 py-20 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             {/* Right image — portrait */}
             <motion.div
@@ -330,13 +325,13 @@ export default function AboutPage() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
-              <div className="relative aspect-[3/4] overflow-hidden group">
+              <div className="relative aspect-3/4 overflow-hidden group">
                 <Image
                   src="/images/about/Screenshot 2026-04-25 154719.png"
                   alt="Bastian Schaefer — Founder of BSC"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover grayscale transition-all duration-[1500ms] ease-out group-hover:grayscale-0 group-hover:scale-105"
+                  className="object-cover grayscale transition-all duration-1500 ease-out group-hover:grayscale-0 group-hover:scale-105"
                 />
                 {/* Inner border */}
                 <div
@@ -372,8 +367,7 @@ export default function AboutPage() {
                 variants={fadeUp}
                 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-10 text-text-main"
               >
-                Built on{" "}
-                <em className="text-accent italic">Experience</em>
+                Built on <em className="text-accent italic">Experience</em>
               </motion.h2>
 
               <motion.p
@@ -431,7 +425,7 @@ export default function AboutPage() {
 
       {/* ===== CERTIFICATIONS ===== */}
       <section className="bg-bg-alt border-b border-text-main/10 px-6 md:px-16 py-20 md:py-28">
-        <div className="mx-auto max-w-[1600px]">
+        <div className="mx-auto max-w-400">
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -448,8 +442,7 @@ export default function AboutPage() {
               variants={fadeUp}
               className="font-heading text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight text-text-main"
             >
-              Certified{" "}
-              <em className="text-accent italic">Excellence</em>
+              Certified <em className="text-accent italic">Excellence</em>
             </motion.h2>
           </motion.div>
 
@@ -466,7 +459,7 @@ export default function AboutPage() {
               variants={fadeUp}
               className="group relative bg-bg-main overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-shadow duration-700"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-[#f5f5f5]">
+              <div className="relative aspect-4/3 overflow-hidden bg-[#f5f5f5]">
                 <Image
                   src="/images/about/ISO 9001.webp"
                   alt="ISO 9001:2015 Quality Management System Certificate"
@@ -490,7 +483,7 @@ export default function AboutPage() {
               variants={fadeUp}
               className="group relative bg-bg-main overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-shadow duration-700"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-[#f5f5f5]">
+              <div className="relative aspect-4/3 overflow-hidden bg-[#f5f5f5]">
                 <Image
                   src="/images/about/ISO 14001.webp"
                   alt="ISO 14001:2015 Environmental Management System Certificate"
@@ -514,7 +507,7 @@ export default function AboutPage() {
 
       {/* ===== STATS BAR ===== */}
       <section className="bg-text-main px-6 md:px-16 py-16 md:py-24">
-        <div className="mx-auto max-w-[1600px]">
+        <div className="mx-auto max-w-400">
           <motion.div
             className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
             initial="hidden"
@@ -532,9 +525,7 @@ export default function AboutPage() {
                 key={stat.label}
                 variants={fadeUp}
                 className={`text-center ${
-                  i < arr.length - 1
-                    ? "lg:border-r lg:border-bg-main/10"
-                    : ""
+                  i < arr.length - 1 ? "lg:border-r lg:border-bg-main/10" : ""
                 }`}
               >
                 <span className="block font-heading text-4xl md:text-5xl lg:text-6xl text-bg-main tracking-tight leading-none mb-3">
