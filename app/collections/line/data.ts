@@ -36,6 +36,7 @@ export const sections: Section[] = [
       {
         name: "Deck Washbasin Tap (cold)",
         desc: D,
+        image: "/images/collection/LINE/F005-6c10266a-640w.png",
         specs: [
           "Finishes Chrome",
           "Stainless Steel Body",
@@ -52,10 +53,11 @@ export const sections: Section[] = [
         ],
         code: "F005",
       },
-      ph("F006"),
+      { ...ph("F006"), image: "/images/collection/LINE/F006-bd891ad0-640w.png" },
       {
         name: "Deck Bib Tap (cold)",
         desc: D,
+        image: "/images/collection/LINE/F022-45d6feba-640w.png",
         specs: [
           "Finishes Chrome",
           "Body Brass HP59",
@@ -74,6 +76,7 @@ export const sections: Section[] = [
       {
         name: "Wall Bib Tap (cold)",
         desc: D,
+        image: "/images/collection/LINE/F001-63bd1cad-640w.png",
         specs: [
           "Surface Finish Chrome",
           "Brass HP59 Body",
@@ -88,10 +91,11 @@ export const sections: Section[] = [
         ],
         code: "F001",
       },
-      ph("F002"),
+      { ...ph("F002"), image: "/images/collection/LINE/F002-c7065db2-640w.png" },
       {
         name: "Wall Bib Tap (cold)",
         desc: D,
+        image: "/images/collection/LINE/F007-640w.png",
         specs: [
           "Finishes Chrome",
           "Brass HP59 Body",
@@ -114,13 +118,14 @@ export const sections: Section[] = [
     title: "Kitchen",
     overline: "Kitchen Taps",
     products: [
-      ph("F008"),
-      ph("F009"),
-      ph("F010"),
-      ph("F012"),
+      { ...ph("F008"), image: "/images/collection/LINE/F008-57cca330-640w.png" },
+      { ...ph("F009"), image: "/images/collection/LINE/F009-96680d77-640w.png" },
+      { ...ph("F010"), image: "/images/collection/LINE/F010-5eb8bb8b-640w.png" },
+      { ...ph("F012"), image: "/images/collection/LINE/F012-52732102-640w.png" },
       {
         name: "Wall Bib Tap (cold)",
         desc: D,
+        image: "/images/collection/LINE/F007-640w.png",
         specs: [
           "Finishes Chrome",
           "Brass HP59 Body",
@@ -136,10 +141,11 @@ export const sections: Section[] = [
         ],
         code: "F007-K",
       },
-      ph("F013"),
+      { ...ph("F013"), image: "/images/collection/LINE/F013-d959b1fc-640w.png" },
       {
         name: "Wall Kitchen Tap (cold)",
         desc: D,
+        image: "/images/collection/LINE/F042-821f6d0c-640w.png",
         specs: [
           "Finishes Chrome",
           "Brass HP59 Body",
@@ -160,10 +166,11 @@ export const sections: Section[] = [
     title: "Bath & Shower",
     overline: "Shower Solutions",
     products: [
-      ph("F015"),
+      { ...ph("F015"), image: "/images/collection/LINE/F015-ac828ec8-640w.png" },
       {
         name: "Shower Solution (cold)",
         desc: D,
+        image: "/images/collection/LINE/F016-b46c8ddd-640w.png",
         specs: [
           "Finishes Chrome",
           "Brass HP59 Body",
@@ -188,6 +195,7 @@ export const sections: Section[] = [
       {
         name: "Shower Solution (cold)",
         desc: D,
+        image: "/images/collection/LINE/F017-e83ee23b-640w.png",
         specs: [
           "Finishes Chrome",
           "Brass HP59 Body",
@@ -208,10 +216,11 @@ export const sections: Section[] = [
         ],
         code: "F017",
       },
-      ph("F017g"),
+      { ...ph("F017g"), image: "/images/collection/LINE/F017G-640w.png" },
       {
         name: "Shower Solution (cold)",
         desc: D,
+        image: "/images/collection/LINE/F018-9558b5d9-640w.png",
         specs: [
           "Finishes Chrome",
           "Brass HP59 Body",
@@ -237,6 +246,7 @@ export const sections: Section[] = [
       {
         name: "Shower Solution (cold)",
         desc: D,
+        image: "/images/collection/LINE/F019-ed846d94-640w.png",
         specs: [
           "Body Brass HP59, chrome plated",
           "Zinc Handle",
@@ -257,6 +267,7 @@ export const sections: Section[] = [
       {
         name: "Shower Solution (cold)",
         desc: D,
+        image: "/images/collection/LINE/F020-2306a732-640w.png",
         specs: [
           "Finishes Chrome",
           "Zinc Handle",
@@ -272,8 +283,8 @@ export const sections: Section[] = [
         ],
         code: "F020",
       },
-      ph("F021"),
-      ph("F095"),
+      { ...ph("F021"), image: "/images/collection/LINE/F021-40bb1232-640w.png" },
+      { ...ph("F095"), image: "/images/collection/LINE/F095-640w.png" },
     ],
   },
 ];

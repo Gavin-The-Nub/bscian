@@ -33,6 +33,7 @@ export const sections: Section[] = [
           "Fittings (Push Pop Up, P-Trap, Angle Valves)",
         ],
         code: "S020",
+        image: "/images/collection/SUS/S020.png",
       },
       {
         name: "Vessel Mixer Faucet",
@@ -49,6 +50,7 @@ export const sections: Section[] = [
           "Fittings (Push Pop Up, P-Trap, Angle Valves)",
         ],
         code: "S021",
+        image: "/images/collection/SUS/S021.png",
       },
       {
         name: "Washbasin Tap (cold)",
@@ -64,6 +66,7 @@ export const sections: Section[] = [
           "Fittings (Push Pop Up, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "S020-C",
+        image: "/images/collection/SUS/S020-C.png",
       },
     ],
   },
@@ -89,6 +92,7 @@ export const sections: Section[] = [
           "Fittings (Angle Valves)",
         ],
         code: "S041",
+        image: "/images/collection/SUS/S041.png",
       },
       {
         name: "Kitchen Mixer Faucet",
@@ -105,6 +109,7 @@ export const sections: Section[] = [
           "Fittings (Angle Valves)",
         ],
         code: "S040",
+        image: "/images/collection/SUS/S040.png",
       },
     ],
   },
@@ -133,6 +138,7 @@ export const sections: Section[] = [
           "Back Check Valves",
         ],
         code: "S1161",
+        image: "/images/collection/SUS/S1161.png",
       },
       {
         name: "Bath Shower Mixer Faucet",
@@ -155,6 +161,7 @@ export const sections: Section[] = [
           "Back Check Valves",
         ],
         code: "S1181",
+        image: "/images/collection/SUS/S1181.png",
       },
       {
         name: "Exposed Bath Shower Solution",
@@ -179,6 +186,7 @@ export const sections: Section[] = [
           "Back Check Valves",
         ],
         code: "S023",
+        image: "/images/collection/SUS/S023.png",
       },
       {
         name: "Concealed Bath Shower Mixer Faucet",
@@ -199,6 +207,7 @@ export const sections: Section[] = [
           "Square Shower Arm",
         ],
         code: "S1783",
+        image: "/images/collection/SUS/S1783.png",
       },
     ],
   },

@@ -41,6 +41,7 @@ export const sections: Section[] = [
           "Extensive Grate Cover Selection",
         ],
         code: "FFD",
+        image: "/images/collection/fittings/FFD-1920w.png",
       },
       {
         name: "Connection Hose (Supply Hose)",
@@ -55,6 +56,7 @@ export const sections: Section[] = [
           "DVWG certified",
         ],
         code: "FSH",
+        image: "/images/collection/fittings/FSH-1920w.png",
       },
       {
         name: "Angle Valves",
@@ -73,6 +75,7 @@ export const sections: Section[] = [
           "Angle Valve Set includes Supply Hose",
         ],
         code: "FAV",
+        image: "/images/collection/fittings/FAV-1920w.png",
       },
       {
         name: "P-Trap",
@@ -85,6 +88,7 @@ export const sections: Section[] = [
         ],
         config: [],
         code: "FPT",
+        image: "/images/collection/fittings/FPT-1920w.png",
       },
       {
         name: "Waste Drainer",
@@ -100,6 +104,7 @@ export const sections: Section[] = [
         ],
         config: [],
         code: "FWD",
+        image: "/images/collection/fittings/FWD-1920w.png",
       },
     ],
   },

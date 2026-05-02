@@ -68,6 +68,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F200",
+        image: "/images/collection/self-closing-taps/F200-640w.jpg",
       },
       {
         name: "Self Closing Tap Washbasin (Unrestricted Aerator)",
@@ -88,6 +89,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F204",
+        image: "/images/collection/self-closing-taps/F204-640w.jpg",
       },
       {
         name: "Self Closing Tap Washbasin (Vandal Proof)",
@@ -130,8 +132,9 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F4218",
+        image: "/images/collection/self-closing-taps/F4218-640w.jpg",
       },
-      ph("F213"),
+      { ...ph("F213"), image: "/images/collection/self-closing-taps/F213-640w.jpg" },
     ],
   },
 
@@ -161,6 +164,7 @@ export const sections: Section[] = [
           "Short (113mm) or Long (194mm) Reach",
         ],
         code: "F4225",
+        image: "/images/collection/self-closing-taps/F4225-640w.jpg",
       },
       {
         name: "Self Closing Tap Wall Mounted",
@@ -178,6 +182,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap)",
         ],
         code: "F4222",
+        image: "/images/collection/self-closing-taps/F4222-640w.jpg",
       },
     ],
   },
@@ -204,6 +209,7 @@ export const sections: Section[] = [
           "Urinal Fittings",
         ],
         code: "SCT001",
+        image: "/images/collection/self-closing-taps/SCT-640w.jpg",
         compliance: SC_COMPLIANCE_BASIC,
       },
       {
@@ -222,6 +228,7 @@ export const sections: Section[] = [
           "Concealed Valve",
         ],
         code: "SCT002",
+        image: "/images/collection/self-closing-taps/SCT_2-640w.jpg",
         compliance: SC_COMPLIANCE_BASIC,
       },
     ],
@@ -253,6 +260,7 @@ export const sections: Section[] = [
           "Ceiling Pipe and Overhead Shower",
         ],
         code: "F4209",
+        image: "/images/collection/self-closing-taps/F4209-640w.jpg",
       },
       {
         name: "Self Closing Tap Shower (Concealed)",
@@ -274,6 +282,7 @@ export const sections: Section[] = [
           "Ceiling Pipe and Overhead Shower",
         ],
         code: "F4227",
+        image: "/images/collection/self-closing-taps/F4227-640w.jpg",
       },
       {
         name: "Self Closing Tap Shower (Pipe Mount)",
@@ -295,6 +304,7 @@ export const sections: Section[] = [
           "Ceiling Pipe and Overhead Shower",
         ],
         code: "F4208",
+        image: "/images/collection/self-closing-taps/F4208-640w.jpg",
       },
     ],
   },
@@ -327,6 +337,7 @@ export const sections: Section[] = [
           "Spreader for Urinal",
         ],
         code: "F220",
+        image: "/images/collection/self-closing-taps/F220-640w.jpg",
       },
     ],
   },
@@ -359,6 +370,7 @@ export const sections: Section[] = [
           "90° Bended Outlet Pipe",
         ],
         code: "F216C",
+        image: "/images/collection/self-closing-taps/F216-640w.jpg",
         compliance: WC_COMPLIANCE,
       },
       {
@@ -382,6 +394,7 @@ export const sections: Section[] = [
           "Outlet Pipe Length 580mm",
         ],
         code: "F216C-DUAL",
+        image: "/images/collection/self-closing-taps/F216C-DUAL-640w.jpg",
         compliance: WC_COMPLIANCE,
       },
       {
@@ -405,6 +418,7 @@ export const sections: Section[] = [
           "Excluding Vacuum Breaker",
         ],
         code: "F240D",
+        image: "/images/collection/self-closing-taps/F240D-640w.jpg",
         compliance: WC_COMPLIANCE,
       },
     ],

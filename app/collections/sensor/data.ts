@@ -67,6 +67,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F207",
+        image: "/images/collection/sensor-products/F207.jpg",
       },
       {
         name: "Lavatory Deck Mounted Tap (Compact)",
@@ -95,6 +96,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F207D",
+        image: "/images/collection/sensor-products/F207D.jpg",
       },
       {
         name: "Lavatory Deck Mounted Tap (H225mm)",
@@ -123,6 +125,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F207F",
+        image: "/images/collection/sensor-products/F207F.jpg",
       },
       {
         name: "Lavatory Deck Mounted Tap (Reach 146mm)",
@@ -151,6 +154,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F207O",
+        image: "/images/collection/sensor-products/F207O.jpg",
       },
       {
         name: "Lavatory Deck Mounted Tap (Reach 124mm)",
@@ -179,6 +183,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F207N",
+        image: "/images/collection/sensor-products/F207N.jpg",
       },
       {
         name: "Lavatory Deck Mounted Tap (Reach 128mm)",
@@ -208,8 +213,9 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F207T",
+        image: "/images/collection/sensor-products/F207T.jpg",
       },
-      ph("F207S"),
+      { ...ph("F207S"), image: "/images/collection/sensor-products/F207S.jpg" },
       {
         name: "Lavatory Deck Mounted Tap (H235mm, Multi-Finish)",
         desc: D_TAP,
@@ -239,6 +245,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F207B",
+        image: "/images/collection/sensor-products/F207B.jpg",
       },
       {
         name: "Lavatory Deck Mounted Tap (H315mm, Multi-Finish)",
@@ -269,6 +276,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap, Angle Valve, Connection Hose)",
         ],
         code: "F208B",
+        image: "/images/collection/sensor-products/F208B.jpg",
       },
       {
         name: "Lavatory Wall Mounted Tap (Reach 210mm)",
@@ -298,6 +306,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap)",
         ],
         code: "F209",
+        image: "/images/collection/sensor-products/F209.jpg",
       },
       {
         name: "Lavatory Wall Mounted Tap (Multi-Finish, Reach 190mm)",
@@ -327,6 +336,7 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap)",
         ],
         code: "F209B",
+        image: "/images/collection/sensor-products/F209B.jpg",
       },
       {
         name: "Lavatory Wall Mounted Tap (Round Spout, Reach 195mm)",
@@ -356,8 +366,9 @@ export const sections: Section[] = [
           "Fittings (Drainer, P-Trap)",
         ],
         code: "F209C",
+        image: "/images/collection/sensor-products/F209C.jpg",
       },
-      ph("F209D"),
+      { ...ph("F209D"), image: "/images/collection/sensor-products/F209D.jpg" },
     ],
   },
 
@@ -390,6 +401,7 @@ export const sections: Section[] = [
           "Power Supply AC only",
         ],
         code: "ASD01",
+        image: "/images/collection/sensor-products/ASD01.jpg",
         compliance: [],
         features: SOAP_FEATURES,
       },
@@ -416,6 +428,7 @@ export const sections: Section[] = [
           "Power Supply AC only",
         ],
         code: "ASD02",
+        image: "/images/collection/sensor-products/ASD02.jpg",
         compliance: [],
         features: SOAP_FEATURES,
       },
@@ -443,6 +456,7 @@ export const sections: Section[] = [
           "Power Supply AC only",
         ],
         code: "ASD10",
+        image: "/images/collection/sensor-products/ASD10.jpg",
         compliance: [],
         features: SOAP_FEATURES,
       },
@@ -470,6 +484,7 @@ export const sections: Section[] = [
           "Power Supply AC only",
         ],
         code: "ASD11",
+        image: "/images/collection/sensor-products/ASD11.jpg",
         compliance: [],
         features: SOAP_FEATURES,
       },
@@ -503,6 +518,7 @@ export const sections: Section[] = [
           "Power Supply DC only",
         ],
         code: "F231",
+        image: "/images/collection/sensor-products/F231.jpg",
         compliance: FLUSH_COMPLIANCE,
       },
       {
@@ -525,6 +541,7 @@ export const sections: Section[] = [
           "Power Supply DC only",
         ],
         code: "F230",
+        image: "/images/collection/sensor-products/F230.jpg",
         compliance: FLUSH_COMPLIANCE,
       },
     ],

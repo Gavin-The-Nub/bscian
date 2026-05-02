@@ -45,6 +45,7 @@ export const sections: Section[] = [
           "1.2m Anti-Theft Bidet Hose",
         ],
         code: "BSS-F302",
+        image: "/images/collection/bidet-spray/BSS-F302-1920w.png",
       },
       {
         name: "Bidet Spray Set — Stainless Steel 304",
@@ -61,6 +62,7 @@ export const sections: Section[] = [
           "1.2m Anti-Theft Bidet Hose",
         ],
         code: "BSS-F303",
+        image: "/images/collection/bidet-spray/BSS-F303-1920w.png",
       },
       {
         name: "Bidet Spray Set — Stainless Steel with Holder",
@@ -79,6 +81,7 @@ export const sections: Section[] = [
           "1.2m Anti-Theft Bidet Hose",
         ],
         code: "F592",
+        image: "/images/collection/bidet-spray/F592-1920w.png",
       },
       {
         name: "Bidet Spray Set — ABS (Chrome/Black)",
@@ -97,6 +100,7 @@ export const sections: Section[] = [
           "1.2m Anti-Theft Bidet Hose",
         ],
         code: "F596",
+        image: "/images/collection/bidet-spray/F596-1920w.png",
       },
       {
         name: "Bidet Spray Set — ABS (Variant)",
@@ -133,6 +137,7 @@ export const sections: Section[] = [
           "1.2m Anti-Theft Bidet Hose",
         ],
         code: "F598",
+        image: "/images/collection/bidet-spray/F598-1920w.png",
       },
     ],
   },
@@ -154,6 +159,7 @@ export const sections: Section[] = [
         ],
         config: [],
         code: "F599-1",
+        image: "/images/collection/bidet-spray/F599-1-1920w.png",
         compliance: [],
         features: FEAT_HOLDER,
       },
@@ -168,6 +174,7 @@ export const sections: Section[] = [
         ],
         config: [],
         code: "F599-2",
+        image: "/images/collection/bidet-spray/F599-2-1920w.png",
         compliance: [],
         features: FEAT_HOLDER,
       },
@@ -192,6 +199,7 @@ export const sections: Section[] = [
         ],
         config: [],
         code: "BSS",
+        image: "/images/collection/bidet-spray/BSS-1920w.png",
         compliance: [],
         features: FEAT_1YR,
       },

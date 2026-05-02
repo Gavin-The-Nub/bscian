@@ -40,6 +40,7 @@ export const sections: Section[] = [
           "Easy to Install and Assemble",
         ],
         code: "BCA-1-DO-x",
+        image: "/images/collection/furniture/BCA-01.jpg",
       },
       {
         name: "Bathroom Cabinet with LED Mirror and Countertop Washbasin",
@@ -64,6 +65,7 @@ export const sections: Section[] = [
           "Easy to Install",
         ],
         code: "BCA-3-x",
+        image: "/images/collection/furniture/BCA-03.jpg",
       },
       {
         name: "Bathroom Cabinet with Mirror Cabinet and Lay-On Washbasin",
@@ -89,6 +91,7 @@ export const sections: Section[] = [
           "Easy to Install and Assemble",
         ],
         code: "BCA",
+        image: "/images/collection/furniture/BCA-02.jpg",
       },
     ],
   },

@@ -57,6 +57,7 @@ export const sections: Section[] = [
       {
         name: "Vessel Mixer Faucet (Reach 113mm)",
         desc: DA,
+        image: "/images/collection/S2/S2-1102-CR-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Deck mounted",
@@ -77,6 +78,7 @@ export const sections: Section[] = [
       {
         name: "Basin Tap (Reach 116mm)",
         desc: DA,
+        image: "/images/collection/S2/S2-1101C-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Deck mounted",
@@ -98,6 +100,7 @@ export const sections: Section[] = [
       {
         name: "Vessel Basin Tap (Reach 116mm)",
         desc: DA,
+        image: "/images/collection/S2/S2-1102C-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Deck mounted",
@@ -127,6 +130,7 @@ export const sections: Section[] = [
       {
         name: "Kitchen Mixer Faucet (Reach 201mm)",
         desc: DA,
+        image: "/images/collection/S2/S2-1140-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Deck mounted",
@@ -148,6 +152,7 @@ export const sections: Section[] = [
       {
         name: "Kitchen Mixer Faucet (Reach 206mm)",
         desc: DA,
+        image: "/images/collection/S2/S2-1141-CR-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Deck mounted",
@@ -178,6 +183,7 @@ export const sections: Section[] = [
       {
         name: "Shower Mixer Faucet",
         desc: DA,
+        image: "/images/collection/S2/S2-1161-CR-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Wall mounted",
@@ -192,6 +198,7 @@ export const sections: Section[] = [
       {
         name: "Shower Mixer Faucet Set with Hand Shower",
         desc: DA,
+        image: "/images/collection/S2/S2-1161-SET1-CR-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Wall mounted",
@@ -215,6 +222,7 @@ export const sections: Section[] = [
       {
         name: "Shower Mixer Faucet Set with Raiser Rail",
         desc: DA,
+        image: "/images/collection/S2/S2-1161-SET2-CR-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Wall mounted",
@@ -238,6 +246,7 @@ export const sections: Section[] = [
       {
         name: "Shower System",
         desc: DA,
+        image: "/images/collection/S2/S2-1171-SQSET-CR-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Brass Body",
@@ -262,6 +271,7 @@ export const sections: Section[] = [
       {
         name: "Bath Shower Mixer Faucet",
         desc: DA,
+        image: "/images/collection/S2/S2-1181-CR-fd0e199c-9eab05d6-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Wall mounted",
@@ -278,6 +288,7 @@ export const sections: Section[] = [
       {
         name: "Bath Shower Mixer Faucet with Hand Shower",
         desc: DB,
+        image: "/images/collection/S2/S2-1181SET-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Brass Body",
@@ -310,6 +321,7 @@ export const sections: Section[] = [
       {
         name: "Concealed Shower Mixer Faucet",
         desc: DB,
+        image: "/images/collection/S2/S2-1192-H-795a702e-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Brass Body",
@@ -328,6 +340,7 @@ export const sections: Section[] = [
       {
         name: "Concealed Shower Mixer Faucet",
         desc: DB,
+        image: "/images/collection/S2/S2-1192-W-e5361617-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Brass Body",
@@ -348,6 +361,7 @@ export const sections: Section[] = [
       {
         name: "Concealed Shower Mixer Faucet",
         desc: DB,
+        image: "/images/collection/S2/S2-1192-C-fec96259-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Brass Body",
@@ -386,6 +400,7 @@ export const sections: Section[] = [
           "Square Shower Arm",
           "PVC Shower Hose",
         ],
+        image: "/images/collection/S2/S2-1783-SQSET2-W-670d4bd6-640w.png",
         code: "S2-1783-SQSET2-W",
       },
       {
@@ -410,11 +425,13 @@ export const sections: Section[] = [
           "Shower Rail instead of Wall Bracket",
           "PVC Shower Hose",
         ],
+        image: "/images/collection/S2/S2-1783-SQSET2-C-7b1ec40b-640w.png",
         code: "S2-1783-SQSET2-C",
       },
       {
         name: "Concealed Shower Mixer Faucet",
         desc: DB,
+        image: "/images/collection/S2/S2-1192-T-760adb3c-640w.png",
         specs: [
           "Finishes Chrome, Matt Black",
           "Brass Body",
@@ -447,6 +464,7 @@ export const sections: Section[] = [
           "Thermostatic Solution",
           "Square Ceiling Shower Pipe",
         ],
+        image: "/images/collection/S2/S2-1783-SQSET1-C-120787b2-640w.png",
         code: "S2-1783-SQSET1-C",
       },
       {
@@ -468,6 +486,7 @@ export const sections: Section[] = [
           "Thermostatic Solution",
           "Round Shower Arm",
         ],
+        image: "/images/collection/S2/S2-1783-SQSET1-W-d8294e99-640w.png",
         code: "S2-1783-SQSET1-W",
       },
     ],
