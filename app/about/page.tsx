@@ -423,7 +423,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===== CERTIFICATIONS ===== */}
+      {/* ===== CERTIFICATIONS =====
+           [CJ] — Cert images sourced from bsundc.com pending higher-resolution
+           assets from BSC. Kept in pre-production to demonstrate intended layout
+           and visual treatment. Flag to BSC at handover. */}
       <section className="bg-bg-alt border-b border-text-main/10 px-6 md:px-16 py-20 md:py-28">
         <div className="mx-auto max-w-400">
           <motion.div
