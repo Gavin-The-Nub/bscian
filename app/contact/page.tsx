@@ -59,6 +59,9 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Form delivery is being finalised pending domain & email service setup.
+    // Until then, surface an honest acknowledgement that directs the user
+    // to email us directly. See FORM_DELIVERY_PENDING note below.
     setSubmitted(true);
   };
 
@@ -207,13 +210,36 @@ export default function ContactPage() {
                   <h3 className="font-heading text-2xl md:text-3xl tracking-tight text-text-main mb-3">
                     Thank You
                   </h3>
-                  <p className="font-body text-sm text-text-body max-w-md mx-auto">
-                    Your enquiry has been received. We&apos;ll get back to you
-                    within 1–2 business days.
+                  <p className="font-body text-sm text-text-body max-w-md mx-auto mb-6">
+                    Online form delivery is being finalised while we complete
+                    our domain setup. To make sure your enquiry reaches us,
+                    please email us directly at the address below.
                   </p>
+                  <a
+                    href="mailto:info@bsundc.com?subject=Website%20Enquiry"
+                    className="inline-flex items-center justify-center px-8 py-3 bg-text-main text-bg-main font-body text-xs uppercase tracking-[0.2em] hover:bg-accent transition-colors duration-500"
+                  >
+                    Email info@bsundc.com
+                  </a>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-0 mt-0">
+                  {/* Form delivery notice — visible until domain & email service are live */}
+                  <div className="mb-10 border-l-2 border-accent bg-accent/5 px-5 py-4">
+                    <p className="font-body text-xs text-text-body leading-relaxed">
+                      <span className="font-medium text-text-main">Note:</span>{" "}
+                      Online form delivery is being finalised while we complete
+                      our domain setup. For an immediate response, please email{" "}
+                      <a
+                        href="mailto:info@bsundc.com"
+                        className="text-accent hover:underline"
+                      >
+                        info@bsundc.com
+                      </a>
+                      .
+                    </p>
+                  </div>
+
                   {/* Personal Information */}
                   <motion.div variants={fadeUp}>
                     <div className="border-b border-text-main/10 pb-2 mb-8">

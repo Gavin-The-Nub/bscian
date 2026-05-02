@@ -7,6 +7,7 @@ const footerLinks = [
   { label: "About", href: "/about" },
   { label: "Contact Us", href: "/contact" },
   { label: "Request Information", href: "/tap-to-shower#inquiry" },
+  { label: "Privacy", href: "/privacy" },
 ];
 
 export default function Footer() {
@@ -56,14 +57,6 @@ export default function Footer() {
               className="font-body text-[10px] text-bg-main/30 hover:text-accent transition-colors duration-500 tracking-wider"
             >
               info@bsundc.com
-            </Link>
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body text-[10px] text-bg-main/30 hover:text-accent transition-colors duration-500 tracking-wider uppercase"
-            >
-              LinkedIn
             </Link>
           </div>
         </div>
