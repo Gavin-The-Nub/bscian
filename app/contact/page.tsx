@@ -29,33 +29,22 @@ const fadeUp = {
 /* ==============================
    DATA
    ============================== */
-const collections = [
-  "DUET Collection",
-  "S2 Collection — Faucets",
-  "SUS Collection — Stainless Steel",
-  "Shower Product Collection",
-  "LINE Collection — Taps",
-  "Self Closing Tap / Flush Valve Collection",
-  "Sensor Product Collection",
-  "Kitchen Products Collection",
-  "Bathroom Collection",
-  "Bathroom Accessories Collection",
-  "Furniture Collection",
-  "Bidet Spray Collection",
-  "Fittings Collection",
+// [CJ] — Enquiry types align with TTS lead-capture buyer-type selector
+//        (TICKET-003). Five mutually-exclusive options.
+const enquiryTypes = [
+  { value: "retailer",  label: "Retailer / Distributor" },
+  { value: "developer", label: "Developer / Builder" },
+  { value: "architect", label: "Architect / Specifier" },
+  { value: "consumer",  label: "End Consumer" },
+  { value: "general",   label: "General Enquiry" },
 ];
 
 /* ==============================
    PAGE
    ============================== */
 export default function ContactPage() {
-  const [selected, setSelected] = useState<string[]>([]);
+  const [enquiryType, setEnquiryType] = useState<string>("");
   const [submitted, setSubmitted] = useState(false);
-
-  const toggle = (name: string) =>
-    setSelected((prev) =>
-      prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]
-    );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -441,26 +430,30 @@ export default function ContactPage() {
                     </motion.div>
                   </div>
 
-                  {/* Product Interest */}
+                  {/* Enquiry Type */}
                   <motion.div variants={fadeUp}>
                     <div className="border-b border-text-main/10 pb-2 mb-8">
                       <span className="font-body text-[10px] uppercase tracking-[0.25em] text-text-body/60">
-                        I am interested in the:
+                        Enquiry Type
                       </span>
                     </div>
                   </motion.div>
 
                   <motion.div
                     variants={fadeUp}
+                    role="radiogroup"
+                    aria-label="Enquiry type"
                     className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-12"
                   >
-                    {collections.map((name) => {
-                      const isActive = selected.includes(name);
+                    {enquiryTypes.map((opt) => {
+                      const isActive = enquiryType === opt.value;
                       return (
                         <button
-                          key={name}
+                          key={opt.value}
                           type="button"
-                          onClick={() => toggle(name)}
+                          role="radio"
+                          aria-checked={isActive}
+                          onClick={() => setEnquiryType(opt.value)}
                           className={`group relative text-left px-5 py-3.5 border transition-all duration-200 cursor-pointer ${
                             isActive
                               ? "bg-accent border-accent text-bg-main"
@@ -468,37 +461,27 @@ export default function ContactPage() {
                           }`}
                         >
                           <span className="flex items-center gap-3">
-                            {/* Custom checkbox */}
+                            {/* Custom radio */}
                             <span
-                              className={`flex-shrink-0 w-4 h-4 border flex items-center justify-center transition-all duration-200 ${
+                              className={`flex-shrink-0 w-4 h-4 rounded-full border flex items-center justify-center transition-all duration-200 ${
                                 isActive
                                   ? "border-bg-main/40 bg-bg-main/20"
                                   : "border-text-main/20 group-hover:border-accent/40"
                               }`}
                             >
                               {isActive && (
-                                <svg
-                                  className="w-2.5 h-2.5 text-bg-main"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                  strokeWidth="3"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M5 13l4 4L19 7"
-                                  />
-                                </svg>
+                                <span className="w-1.5 h-1.5 rounded-full bg-bg-main" />
                               )}
                             </span>
                             <span className="font-body text-xs font-medium tracking-wide">
-                              {name}
+                              {opt.label}
                             </span>
                           </span>
                         </button>
                       );
                     })}
+                    {/* Hidden input so the value is included in form submissions */}
+                    <input type="hidden" name="enquiryType" value={enquiryType} />
                   </motion.div>
 
                   {/* Message */}

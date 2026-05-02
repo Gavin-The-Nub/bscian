@@ -44,13 +44,13 @@ const proofStats = [
   { number: "30–45", unit: "min", label: "Install Time" },
   { number: "3", unit: "yr", label: "Limited Warranty" },
   { number: "DE · DK", unit: "", label: "Engineered" },
-  { number: "13", unit: "", label: "Collections" },
+  { number: "11", unit: "", label: "Collections" },
 ];
 
-// [CJ] — Cert-mark strip beneath the stats. Visual proof for the discerning
-//        buyer who reads marks instantly. Text-styled placeholders until BSC
-//        supplies SVG logos for ISO / CB / Worldbex.
-const certMarks = ["ISO 9001", "ISO 14001", "CB IEC 60335", "Worldbex 2026"];
+// [CJ] — Cert-mark strip beneath the stats. Only certifications confirmed in
+//        BSC's product documentation are listed. ISO 9001 / ISO 14001 pulled
+//        pending written confirmation from BSC that they hold these.
+const certMarks = ["CB IEC 60335", "Worldbex 2026"];
 
 /* ==============================
    PAGE
